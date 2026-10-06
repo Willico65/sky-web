@@ -2,6 +2,7 @@
 export const SITE = {
   name: 'Sky Projects',
   legalName: 'Sky Projects S.A.S',
+  nit: '826.002.334-0',
   slogan: 'It Does Well',
   phoneDisplay: '(+57) 313 309 9298',
   phoneE164: '573133099298', // WhatsApp provisional; el bot tendrá otro número (pendiente).

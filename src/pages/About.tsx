@@ -6,10 +6,12 @@ import { PAGE_BANNERS } from '../data/banners'
 import { SITE } from '../data/site'
 import { usePageMeta } from '../lib/hooks'
 import { FinalCta } from './Home'
+import fotoGerente from '../assets/equipo/gerente.jpg'
 
 // Espacios que la empresa debe completar (pendientes de Nosotros).
 const FOUNDER = '[Nombre del fundador]'
-const MANAGER = '[Nombre del gerente]'
+const MANAGER = 'Wilson Augusto Camargo'
+const MANAGER_ROLE = 'Gerente'
 
 const VALUES = [
   { t: 'Compromiso', d: 'Cumplimos lo que acordamos con cada cliente, desde la cotización hasta el mantenimiento.' },
@@ -90,10 +92,17 @@ export default function About() {
             <SectionHeading eyebrow="Nuestro equipo" title="Detrás de cada proyecto" intro="Detrás de cada proyecto hay un equipo técnico con experiencia en energía, redes, servidores y sistemas solares." />
           </div>
           <Reveal className="flex items-center gap-6 rounded-md border border-line bg-surface p-6 lg:col-span-1">
-            <div className="grid h-24 w-24 shrink-0 place-items-center rounded-full border border-dashed border-ink-muted/40 bg-surface-alt text-center text-[11px] leading-4 text-ink-muted">Foto del<br />gerente</div>
+            <img
+              src={fotoGerente}
+              alt={`${MANAGER}, ${MANAGER_ROLE} de Sky Projects SAS`}
+              width={96}
+              height={96}
+              loading="lazy"
+              className="h-24 w-24 shrink-0 rounded-full border border-line object-cover"
+            />
             <div>
-              <p className="text-[18px] font-semibold text-navy"><span className="rounded-sm bg-accent/15 px-1 text-accent-text">{MANAGER}</span></p>
-              <p className="text-[15px] text-ink-muted">Gerente</p>
+              <p className="text-[18px] font-semibold text-navy">{MANAGER}</p>
+              <p className="text-[15px] text-ink-muted">{MANAGER_ROLE}</p>
             </div>
           </Reveal>
           <Reveal delay={80} className="rounded-md border border-line bg-surface p-6 lg:col-span-1">

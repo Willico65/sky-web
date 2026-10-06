@@ -1,5 +1,7 @@
 // Documentos legales aprobados por la empresa (LE-01 a LE-07).
-// ANTES DE PUBLICAR: completar [NIT] y [FECHA DE PUBLICACIÓN] y pasar por revisión de abogado.
+// ANTES DE PUBLICAR: completar [FECHA DE PUBLICACIÓN] y pasar por revisión de abogado.
+
+import { SITE } from './site'
 
 export interface LegalDoc {
   slug: string
@@ -8,7 +10,7 @@ export interface LegalDoc {
   body: string // Markdown sencillo: ##, ###, párrafos, listas "- " y "1. ", **negrita**.
 }
 
-const RESP = 'Sky Projects S.A.S, NIT [NIT], con domicilio en la Cra 21 #23-01, Centro, Paipa, Boyacá'
+const RESP = `Sky Projects S.A.S, NIT ${SITE.nit}, con domicilio en la Cra 21 #23-01, Centro, Paipa, Boyacá`
 
 export const LEGAL_DOCS: LegalDoc[] = [
   {
@@ -17,7 +19,7 @@ export const LEGAL_DOCS: LegalDoc[] = [
     description: 'Cómo Sky Projects S.A.S recolecta, usa y protege tus datos personales.',
     body: `## 1. Responsable del tratamiento
 
-Sky Projects S.A.S (en adelante, Sky Projects), identificada con NIT [NIT], con domicilio en la Cra 21 #23-01, Centro, Paipa, Boyacá, Colombia. Teléfono y WhatsApp: (+57) 313 309 9298. Correo electrónico: contacto@skyprojects.com.co. Sitio web: www.skyprojects.com.co.
+Sky Projects S.A.S (en adelante, Sky Projects), identificada con NIT ${SITE.nit}, con domicilio en la Cra 21 #23-01, Centro, Paipa, Boyacá, Colombia. Teléfono y WhatsApp: (+57) 313 309 9298. Correo electrónico: contacto@skyprojects.com.co. Sitio web: www.skyprojects.com.co.
 
 ## 2. Marco legal
 
@@ -208,4 +210,4 @@ Te responderemos en un máximo de 15 días hábiles. Si no estás conforme con l
 export const legalBySlug = (slug: string) => LEGAL_DOCS.find((d) => d.slug === slug)
 
 export const PRIVACY_NOTICE =
-  'Sky Projects S.A.S, NIT [NIT], con domicilio en la Cra 21 #23-01, Centro, Paipa, Boyacá, es responsable del tratamiento de los datos que nos compartes. Los usaremos para atender tu solicitud, cotizar, gestionar tus compras, facturar, programar servicios, dar soporte y garantía, y, solo si lo autorizas, enviarte ofertas y novedades. Tienes derecho a conocer, actualizar, rectificar y suprimir tus datos, y a revocar tu autorización, escribiendo a contacto@skyprojects.com.co o al (+57) 313 309 9298.'
+  `Sky Projects S.A.S, NIT ${SITE.nit}, con domicilio en la Cra 21 #23-01, Centro, Paipa, Boyacá, es responsable del tratamiento de los datos que nos compartes. Los usaremos para atender tu solicitud, cotizar, gestionar tus compras, facturar, programar servicios, dar soporte y garantía, y, solo si lo autorizas, enviarte ofertas y novedades. Tienes derecho a conocer, actualizar, rectificar y suprimir tus datos, y a revocar tu autorización, escribiendo a contacto@skyprojects.com.co o al (+57) 313 309 9298.`

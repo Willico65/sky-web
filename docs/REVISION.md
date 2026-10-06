@@ -6,7 +6,7 @@ Lo que corregiría o completaría antes de poner el sitio en línea, de mayor a 
 
 1. **Compilar con las herramientas oficiales.** En el entorno donde se construyó, el registro de npm estaba bloqueado (403), así que nunca se ejecutaron `npm install`, `tsc` ni `vite build`. La vista previa se armó con esbuild, Tailwind 4 y un enrutador de reemplazo. Hay que correr `npm install && npm run build` y corregir los errores de TypeScript que aparezcan.
 2. **Licencia de la fuente del logo (ID-06).** `skyprojects.ttf` es «Astron Boy Video» (Ray Larabie) renombrada. Confirmar licencia y convertirla a WOFF2 (hoy se carga el TTF de 125 KB).
-3. **Datos legales.** Completar `[NIT]` y `[FECHA DE PUBLICACIÓN]` en `src/data/legal.ts` y pasar los 6 documentos por un abogado. El aviso de privacidad de los formularios muestra hoy «NIT [NIT]».
+3. **Datos legales.** Completar `[FECHA DE PUBLICACIÓN]` en `src/data/legal.ts` y pasar los 6 documentos por un abogado.
 4. **Espacios de Nosotros.** `[Nombre del fundador]`, `[Nombre del gerente]` y la foto del gerente (`src/pages/About.tsx`).
 5. **Catálogo vacío.** La tienda no tiene productos reales. Los 4 productos de ejemplo solo aparecen con `VITE_SHOW_SAMPLE_PRODUCTS=true`; deben quedar en `false`.
 6. **Textos nuevos sin aprobar.** Se escribieron para huecos de diseño y necesitan visto bueno:
