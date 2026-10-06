@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { Link, NavLink, useLocation } from 'react-router-dom'
-import logoAzul from '../assets/logos/sky-logo-azul.png'
+import logoBlanco from '../assets/logos/sky-logo-blanco.png'
 import { NAV } from '../data/site'
 import { SERVICES } from '../data/services'
 import { ServiceIcon } from './ServiceIcon'
@@ -8,9 +8,9 @@ import { IconChevronDown, IconClose, IconMenu } from './Icons'
 import { Button } from './Button'
 
 const linkCls = ({ isActive }: { isActive: boolean }) =>
-  `relative px-1 py-2 text-[15px] font-medium transition-colors duration-150 ease-out ${
-    isActive ? 'text-navy' : 'text-ink-muted hover:text-navy'
-  } after:absolute after:inset-x-1 after:-bottom-px after:h-0.5 after:origin-left after:bg-blue after:transition-transform after:duration-200 after:ease-out ${
+  `relative px-1 py-2 text-[15px] font-medium transition-colors duration-150 ease-out focus-visible:outline-on-dark ${
+    isActive ? 'text-on-dark' : 'text-on-dark/75 hover:text-on-dark'
+  } after:absolute after:inset-x-1 after:-bottom-px after:h-0.5 after:origin-left after:bg-on-dark after:transition-transform after:duration-200 after:ease-out ${
     isActive ? 'after:scale-x-100' : 'after:scale-x-0'
   }`
 
@@ -59,13 +59,13 @@ export function Header() {
 
   return (
     <header
-      className={`sticky top-0 z-40 border-b bg-surface/90 backdrop-blur-md transition-[border-color,box-shadow] duration-200 ${
-        scrolled ? 'border-line shadow-[0_1px_0_rgba(2,2,88,0.04)]' : 'border-transparent'
+      className={`sticky top-0 z-40 border-b bg-gradient-to-r from-blue via-navy via-55% to-deep transition-[border-color,box-shadow] duration-200 ${
+        scrolled ? 'border-on-dark/10 shadow-[0_1px_0_rgba(2,2,88,0.04)]' : 'border-transparent'
       }`}
     >
       <div className="mx-auto flex h-[72px] max-w-7xl items-center justify-between gap-6 px-4 sm:px-6 lg:px-8">
-        <Link to="/" aria-label="Sky Projects, inicio" className="shrink-0">
-          <img src={logoAzul} alt="Sky Projects SAS · It Does Well" width={691} height={130} className="h-8 w-auto sm:h-9" />
+        <Link to="/" aria-label="Sky Projects, inicio" className="shrink-0 focus-visible:outline-on-dark">
+          <img src={logoBlanco} alt="Sky Projects SAS · It Does Well" width={691} height={130} className="h-8 w-auto sm:h-9" />
         </Link>
 
         <nav aria-label="Principal" className="hidden items-center gap-6 lg:flex">
@@ -79,7 +79,7 @@ export function Header() {
                     aria-label="Ver líneas de servicio"
                     aria-expanded={svcOpen}
                     onClick={() => setSvcOpen((v) => !v)}
-                    className="rounded p-1 text-ink-muted hover:text-navy"
+                    className="rounded p-1 text-on-dark/75 hover:text-on-dark focus-visible:outline-on-dark"
                   >
                     <IconChevronDown className={`h-4 w-4 transition-transform duration-200 ease-out ${svcOpen ? 'rotate-180' : ''}`} />
                   </button>
@@ -121,12 +121,12 @@ export function Header() {
         </nav>
 
         <div className="hidden lg:block">
-          <Button to="/contacto" variant="primary" className="px-4 py-2.5">Cotizar</Button>
+          <Button to="/contacto" variant="light" className="px-4 py-2.5 focus-visible:outline-on-dark">Cotizar</Button>
         </div>
 
         <button
           type="button"
-          className="-mr-2 rounded p-2 text-navy lg:hidden"
+          className="-mr-2 rounded p-2 text-on-dark focus-visible:outline-on-dark lg:hidden"
           aria-label={open ? 'Cerrar menú' : 'Abrir menú'}
           aria-expanded={open}
           onClick={() => setOpen((v) => !v)}
