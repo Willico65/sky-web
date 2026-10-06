@@ -1,0 +1,93 @@
+@import "tailwindcss";
+
+/* Fuente del logotipo: solo para títulos de marca (manual de marca, sección 5).
+   Pendiente ID-06: confirmar licencia y convertir a WOFF2 antes de publicar. */
+@font-face {
+  font-family: "Sky Projects";
+  src: url("/fonts/skyprojects.ttf") format("truetype");
+  font-weight: 400;
+  font-display: swap;
+}
+
+/* Tokens del manual de marca (tokens.json). */
+@theme {
+  --color-navy: #020258;
+  --color-blue: #0049ac;
+  --color-deep: #1a0d1f;
+  --color-accent: #d88b0f;
+  --color-accent-text: #9d650b;
+  --color-surface: #ffffff;
+  --color-surface-alt: #f4f6fb;
+  --color-ink-muted: #5a5f7d;
+  --color-on-dark: #ffffff;
+  --color-line: #dfe3ef;
+
+  --font-display: "Sky Projects", "Exo 2", sans-serif;
+  --font-sans: "Exo 2", system-ui, sans-serif;
+
+  --radius-sm: 6px;
+  --radius-md: 10px;
+
+  /* Curvas de animación: salidas rápidas y suaves, sin rebotes. */
+  --ease-out-quint: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out-quart: cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-surface font-sans text-deep;
+    font-size: 16px;
+    line-height: 26px;
+  }
+  ::selection {
+    background: var(--color-blue);
+    color: var(--color-on-dark);
+  }
+  :focus-visible {
+    outline: 2px solid var(--color-blue);
+    outline-offset: 2px;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+/* Aparición al hacer scroll: visible por defecto; solo se oculta cuando JS la va a animar. */
+.reveal-ready { opacity: 0; transform: translateY(12px); }
+.reveal-in {
+  opacity: 1;
+  transform: none;
+  transition: opacity 500ms var(--ease-out-quint), transform 500ms var(--ease-out-quint);
+}
+
+/* Fondo técnico sutil: cuadrícula de líneas finas. */
+.tech-grid {
+  background-image:
+    linear-gradient(to right, rgb(255 255 255 / 0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(255 255 255 / 0.06) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+.tech-grid-light {
+  background-image:
+    linear-gradient(to right, rgb(2 2 88 / 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(2 2 88 / 0.05) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+/* Contenido largo (documentos legales y artículos). */
+.prose-sky h2 { @apply mt-10 mb-3 text-2xl font-semibold text-navy; }
+.prose-sky h3 { @apply mt-8 mb-2 text-lg font-semibold text-navy; }
+.prose-sky p { @apply my-3 max-w-[70ch] text-deep/90; }
+.prose-sky ul { @apply my-3 max-w-[70ch] list-disc space-y-1.5 pl-6; }
+.prose-sky ol { @apply my-3 max-w-[70ch] list-decimal space-y-1.5 pl-6; }
+.prose-sky strong { @apply font-semibold text-navy; }
+.prose-sky a { @apply text-blue underline underline-offset-2; }
