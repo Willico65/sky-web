@@ -15,9 +15,9 @@ import { usePageMeta } from '../lib/hooks'
 import { WA } from '../lib/whatsapp'
 
 const FACTS = [
-  { k: 'Desde 2000', v: 'Más de 25 años de soluciones tecnológicas' },
-  { k: 'Tripp Lite', v: 'Certificación para revisión y mantenimiento' },
-  { k: 'Región centro', v: 'Con proyección a todo el país' },
+  { k: 'Más de 25 años de trayectoria', v: 'Llevando soluciones tecnológicas a empresas y hogares' },
+  { k: '5 líneas de servicio', v: 'Respaldo eléctrico, redes y servidores, energía solar, equipos tecnológicos y procesos digitales' },
+  { k: 'Región centro del país', v: 'Sede principal en Paipa y proyectos para clientes de toda la región centro del país, con proyección a todo el territorio nacional' },
   { k: '< 2 h hábiles', v: 'Tiempo de respuesta por WhatsApp' },
 ]
 
