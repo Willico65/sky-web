@@ -4,6 +4,7 @@ import { Button } from '../components/Button'
 import { Container, SectionHeading } from '../components/Section'
 import { Reveal } from '../components/Reveal'
 import { Accordion } from '../components/Accordion'
+import { FieldPhotos } from '../components/FieldPhotos'
 import { ServiceIcon } from '../components/ServiceIcon'
 import { IconCheck, IconChat } from '../components/Icons'
 import { serviceBySlug } from '../data/services'
@@ -106,6 +107,8 @@ export default function ServiceDetail() {
           </ol>
         </Container>
       </section>
+
+      <FieldPhotos slug={s.slug} />
 
       <section className="border-t border-line py-20">
         <Container className="grid gap-12 lg:grid-cols-[1fr_1.5fr]">
