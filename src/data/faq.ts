@@ -42,7 +42,7 @@ export const FAQ_GROUPS: { group: string; items: { q: string; a: string }[] }[] 
       },
       {
         "q": "¿Los precios incluyen IVA?",
-        "a": "No. Los precios publicados no incluyen IVA; el IVA se suma al momento del pago y aparece en la factura."
+        "a": "Sí. Todos los precios publicados incluyen IVA: el precio que ves es el precio total del producto. El valor del IVA aparece discriminado en la factura."
       },
       {
         "q": "¿Qué medios de pago aceptan?",

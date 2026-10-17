@@ -4,7 +4,7 @@ import { SERVICES } from '../data/services'
 import { hasApi, submitForm } from '../lib/api'
 import { waLink } from '../lib/whatsapp'
 import { Button } from './Button'
-import { ConsentBoxes, Field, MSG, isEmail, isPhone } from './Form'
+import { CONSENT_LINE, ConsentBoxes, Field, MSG, focusFirstInvalid, isEmail, isPhone } from './Form'
 import { FileInput } from './FileInput'
 
 const BUSINESS_ONLY = ['redes-y-servidores', 'procesos-digitales']
@@ -51,7 +51,7 @@ export function QuoteForm() {
     setErrors(e)
     setSendError('')
     if (Object.keys(e).length) {
-      document.querySelector<HTMLElement>('[aria-invalid="true"]')?.focus()
+      focusFirstInvalid(ev.currentTarget as HTMLFormElement)
       return
     }
     const payload = { linea: service?.name, ...v, clientType, extra, promo, consent, adjuntos: files ? Array.from(files).map((f) => f.name) : [] }
@@ -66,6 +66,8 @@ export function QuoteForm() {
         ...Object.entries(extra).filter(([, val]) => val.trim()).map(([q, val]) => `${q}: ${val}`),
         `Necesito: ${v.message}`,
         ...(files?.length ? ['(Te envío los archivos por este chat)'] : []),
+        CONSENT_LINE,
+        `Ofertas y novedades: ${promo ? 'sí quiero recibirlas' : 'no'}`,
       ]
       window.open(waLink(lines.join('\n')), '_blank', 'noopener')
       return navigate('/contacto/gracias')

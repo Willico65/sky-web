@@ -86,7 +86,7 @@ export default function Store() {
                   <li className="flex gap-3"><span className="text-[13px] font-semibold tabular-nums tracking-[0.12em] text-blue pt-0.5">02</span>Se abre WhatsApp con el producto ya escrito.</li>
                   <li className="flex gap-3"><span className="text-[13px] font-semibold tabular-nums tracking-[0.12em] text-blue pt-0.5">03</span>El asesor te confirma disponibilidad, precio final, envío y forma de pago.</li>
                 </ol>
-                <p className="mt-5 border-t border-line pt-4 text-[13.5px] leading-5 text-ink-muted">Precios sin IVA. Pagas por transferencia, Nequi, Daviplata o en efectivo en nuestra sede de Paipa.</p>
+                <p className="mt-5 border-t border-line pt-4 text-[13.5px] leading-5 text-ink-muted"><strong className="font-semibold text-navy">Todos los precios incluyen IVA.</strong> Pagas por transferencia, Nequi, Daviplata o en efectivo en nuestra sede de Paipa.</p>
               </div>
             </Container>
           </section>
@@ -158,7 +158,7 @@ export default function Store() {
               )}
 
               <div>
-                <h3 className="text-[12px] font-semibold uppercase tracking-[0.14em] text-ink-muted">Precio (sin IVA)</h3>
+                <h3 className="text-[12px] font-semibold uppercase tracking-[0.14em] text-ink-muted">Precio (IVA incluido)</h3>
                 <div className="mt-3 flex items-center gap-2">
                   <input inputMode="numeric" placeholder="Mín." value={minP} onChange={(e) => setMinP(e.target.value.replace(/\D/g, ''))} className="w-full rounded-sm border border-line px-2.5 py-2 text-[14px]" aria-label="Precio mínimo" />
                   <span className="text-ink-muted">–</span>

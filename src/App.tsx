@@ -10,6 +10,7 @@ const Store = lazy(() => import('./pages/Store'))
 const Product = lazy(() => import('./pages/Product'))
 const MoreProducts = lazy(() => import('./pages/MoreProducts'))
 const Blog = lazy(() => import('./pages/Blog'))
+const BlogPost = lazy(() => import('./pages/BlogPost'))
 const Contact = lazy(() => import('./pages/Contact'))
 const Thanks = lazy(() => import('./pages/Thanks'))
 const Faq = lazy(() => import('./pages/Faq'))
@@ -34,6 +35,7 @@ export default function App() {
           <Route path="tienda/producto/:slug" element={<Product />} />
           <Route path="tienda/:categoria" element={<Store />} />
           <Route path="blog" element={<Blog />} />
+          <Route path="blog/:slug" element={<BlogPost />} />
           <Route path="contacto" element={<Contact />} />
           <Route path="contacto/gracias" element={<Thanks />} />
           <Route path="preguntas-frecuentes" element={<Faq />} />

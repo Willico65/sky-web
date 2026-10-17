@@ -59,11 +59,12 @@ export function Footer() {
         </div>
 
         <div className="mt-14 flex flex-col gap-4 border-t border-on-dark/10 pt-6 text-[13px] text-on-dark/55 lg:flex-row lg:items-center lg:justify-between">
-          <p>© {new Date().getFullYear()} {SITE.legalName} · {SITE.slogan}</p>
+          <p>© {new Date().getFullYear()} {SITE.legalName} · NIT {SITE.nit} · {SITE.slogan}</p>
           <ul className="flex flex-wrap gap-x-5 gap-y-2">
             {LEGAL_LINKS.map((l) => (
               <li key={l.to}><Link to={l.to} className="transition-colors duration-150 hover:text-on-dark">{l.label}</Link></li>
             ))}
+            <li><a href="https://www.sic.gov.co" target="_blank" rel="noopener noreferrer" className="transition-colors duration-150 hover:text-on-dark">Superintendencia de Industria y Comercio</a></li>
           </ul>
         </div>
       </div>

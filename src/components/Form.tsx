@@ -11,11 +11,18 @@ export const MSG = {
   sendError: 'No pudimos enviar tu solicitud. Inténtalo de nuevo o escríbenos por WhatsApp al (+57) 313 309 9298.',
 }
 
+// Lleva el foco al primer campo con error (después de que React pinte los errores).
+export const focusFirstInvalid = (form: HTMLFormElement) =>
+  window.setTimeout(() => form.querySelector<HTMLElement>('[aria-invalid="true"]')?.focus(), 0)
+
+// Constancia de la autorización en el mensaje de WhatsApp (fase 1, sin backend).
+export const CONSENT_LINE = 'Autorizo el tratamiento de mis datos personales según la Política de Sky Projects: https://www.skyprojects.com.co/privacidad'
+
 export const isEmail = (v: string) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim())
 export const isPhone = (v: string) => v.replace(/\D/g, '').length === 10
 
 const inputCls =
-  'mt-1.5 block w-full rounded-sm border bg-surface px-3.5 py-2.5 text-[15px] text-deep placeholder:text-ink-muted/60 ' +
+  'mt-1.5 block w-full rounded-sm border bg-surface px-3.5 py-2.5 text-[15px] text-deep placeholder:text-ink-muted ' +
   'transition-[border-color,box-shadow] duration-150 ease-out focus:border-blue focus:outline-none focus:ring-4 focus:ring-blue/10'
 
 export function Field({ label, error, required, hint, children }: {
@@ -38,16 +45,17 @@ export function Field({ label, error, required, hint, children }: {
 export function ConsentBoxes({ consent, promo, onConsent, onPromo, error }: {
   consent: boolean; promo?: boolean; onConsent: (v: boolean) => void; onPromo?: (v: boolean) => void; error?: string
 }) {
+  const errId = `${useId()}-err`
   return (
     <div className="space-y-3 rounded-md bg-surface-alt p-4">
       <p className="text-[12.5px] leading-5 text-ink-muted">{PRIVACY_NOTICE}{' '}
         Consulta la <Link to="/privacidad" className="text-blue underline underline-offset-2">Política de tratamiento de datos personales</Link>.
       </p>
       <label className="flex items-start gap-3 text-[14px] text-deep">
-        <input type="checkbox" checked={consent} onChange={(e) => onConsent(e.target.checked)} className="mt-1 h-4 w-4 accent-[#0049ac]" />
-        <span>Autorizo a Sky Projects S.A.S a tratar mis datos personales para atender mi solicitud, de acuerdo con su Política de tratamiento de datos personales. <span className="text-accent-text">*</span></span>
+        <input type="checkbox" checked={consent} onChange={(e) => onConsent(e.target.checked)} aria-required="true" aria-invalid={!!error} aria-describedby={error ? errId : undefined} className="mt-1 h-4 w-4 accent-[#0049ac]" />
+        <span>Autorizo a Sky Projects S.A.S a tratar mis datos personales para atender mi solicitud, de acuerdo con su Política de tratamiento de datos personales. <span className="text-accent-text" aria-hidden="true">*</span></span>
       </label>
-      {error && <p className="text-[13px] text-red-700">{error}</p>}
+      {error && <p id={errId} className="text-[13px] text-red-700">{error}</p>}
       {onPromo && (
         <label className="flex items-start gap-3 text-[14px] text-deep">
           <input type="checkbox" checked={!!promo} onChange={(e) => onPromo(e.target.checked)} className="mt-1 h-4 w-4 accent-[#0049ac]" />

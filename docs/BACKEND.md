@@ -24,7 +24,7 @@ Respuesta esperada: `201` con `{ "ok": true }`. Cualquier otro código muestra e
 
 - `cotizaciones`, `soporte`, `pqrs`: campos del formulario + `created_at`, `estado`.
 - `autorizaciones`: titular, texto aceptado, fecha y origen (prueba de la autorización, Ley 1581).
-- `productos`: ref, slug, nombre, marca, categoria, subcategoria, precio_sin_iva, en_existencia, para (hogar/empresa), specs (JSON), garantia, imagenes.
+- `productos`: ref, slug, nombre, marca, categoria, subcategoria, precio_con_iva, en_existencia, para (hogar/empresa), specs (JSON), garantia, imagenes.
 
 ## Pendientes para esta fase
 

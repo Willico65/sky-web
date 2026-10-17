@@ -27,7 +27,7 @@ export function ProductCard({ product: p }: { product: Product }) {
         <h3 className="mt-1.5 flex-1 text-[16px] font-semibold leading-6 text-navy">{p.name}</h3>
         <div className="mt-4 flex items-end justify-between gap-3">
           <p className="text-[15px] font-semibold text-navy">
-            {price ? <>{price} <span className="text-[12px] font-normal text-ink-muted">+ IVA</span></> : <span className="text-[13px] font-normal text-ink-muted">Precio con un asesor</span>}
+            {price ? <>{price} <span className="text-[12px] font-normal text-ink-muted">IVA incluido</span></> : <span className="text-[13px] font-normal text-ink-muted">Precio con un asesor</span>}
           </p>
           <span className={`text-[12px] font-semibold ${p.inStock ? 'text-blue' : 'text-ink-muted'}`}>{p.inStock ? 'En existencia' : 'Bajo pedido'}</span>
         </div>

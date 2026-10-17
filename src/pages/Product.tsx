@@ -41,7 +41,7 @@ export default function Product() {
             <h1 className="mt-2 text-[30px] font-semibold leading-9 text-navy">{p.name}</h1>
             <p className="mt-1 text-[14.5px] text-ink-muted">{sub?.name}</p>
             <div className="mt-6 flex items-end gap-3 border-y border-line py-5">
-              {price ? <p className="text-[28px] font-semibold text-navy">{price} <span className="text-[15px] font-normal text-ink-muted">+ IVA</span></p> : <p className="text-[17px] text-ink-muted">Consulta el precio con un asesor</p>}
+              {price ? <p className="text-[28px] font-semibold text-navy">{price} <span className="text-[15px] font-normal text-ink-muted">IVA incluido</span></p> : <p className="text-[17px] text-ink-muted">Consulta el precio con un asesor</p>}
               <span className={`ml-auto text-[13px] font-semibold ${p.inStock ? 'text-blue' : 'text-ink-muted'}`}>{p.inStock ? 'En existencia' : 'Bajo pedido'}</span>
             </div>
             <div className="mt-6 flex flex-wrap gap-3">

@@ -10,7 +10,8 @@ import { SERVICES } from '../data/services'
 import { PAGE_BANNERS } from '../data/banners'
 import { SITE } from '../data/site'
 import { getCatalog } from '../data/products'
-import { POSTS } from '../data/posts'
+import { publishedPosts } from '../data/posts'
+import { PostCard } from '../components/PostCard'
 import { usePageMeta } from '../lib/hooks'
 import { WA } from '../lib/whatsapp'
 
@@ -136,12 +137,17 @@ export default function Home() {
       </section>
 
       {/* Blog: aparece cuando haya artículos publicados (SE-10) */}
-      {POSTS.length > 0 && (
+      {publishedPosts().length > 0 && (
         <section className="border-t border-line py-20">
           <Container>
-            <div className="flex items-end justify-between gap-6">
+            <div className="flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-end">
               <SectionHeading eyebrow="Blog" title="Ideas para proteger y mejorar tu operación" />
               <Button to="/blog" variant="outline">Ver todos los artículos</Button>
+            </div>
+            <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+              {publishedPosts().slice(0, 3).map((p, i) => (
+                <Reveal key={p.slug} delay={i * 60}><PostCard post={p} /></Reveal>
+              ))}
             </div>
           </Container>
         </section>

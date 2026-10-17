@@ -8,9 +8,8 @@ import { usePageMeta } from '../lib/hooks'
 import { FinalCta } from './Home'
 import fotoGerente from '../assets/equipo/gerente.jpg'
 
-// Espacios que la empresa debe completar (pendientes de Nosotros).
-const FOUNDER = '[Nombre del fundador]'
 const MANAGER = 'Wilson Augusto Camargo'
+const FOUNDER = MANAGER
 const MANAGER_ROLE = 'Gerente'
 
 const VALUES = [
@@ -42,7 +41,7 @@ export default function About() {
             <SectionHeading eyebrow="Nuestra historia" title="Más de 25 años de soluciones tecnológicas" />
             <div className="mt-6 space-y-4 text-[17px] leading-7 text-deep/85">
               <p>
-                Sky Projects nació en el año {SITE.founded} en Duitama, Boyacá, de la mano de <span className="rounded-sm bg-accent/15 px-1 font-semibold text-accent-text">{FOUNDER}</span>. Desde entonces hemos crecido junto a nuestros clientes, llevando soluciones de energía y tecnología a empresas, hogares y entidades públicas.
+                Sky Projects nació en el año {SITE.founded} en Duitama, Boyacá, de la mano de {FOUNDER}. Desde entonces hemos crecido junto a nuestros clientes, llevando soluciones de energía y tecnología a empresas, hogares y entidades públicas.
               </p>
               <p>Hoy atendemos la región centro del país y trabajamos para llevar nuestras soluciones a toda Colombia.</p>
             </div>

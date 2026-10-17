@@ -6,7 +6,7 @@ export function waLink(message: string): string {
 }
 
 export const WA = {
-  general: () => waLink('Hola, quiero información sobre Sky Projects'),
+  general: () => waLink('Hola, quiero información sobre este producto'),
   quote: (service: string) => waLink(`Hola, quiero cotizar ${service}`),
   buy: (product: string, ref: string) => waLink(`Hola, quiero comprar: ${product} (Ref. ${ref})`),
   support: (what: string) => waLink(`Hola, necesito soporte con ${what}`),

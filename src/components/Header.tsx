@@ -85,8 +85,8 @@ export function Header() {
                   </button>
                 </div>
                 <div
-                  className={`absolute left-1/2 top-full w-[560px] -translate-x-1/2 pt-3 transition-[opacity,transform] duration-150 ease-out origin-top ${
-                    svcOpen ? 'pointer-events-auto scale-100 opacity-100' : 'pointer-events-none scale-[0.97] opacity-0'
+                  className={`absolute left-1/2 top-full w-[560px] -translate-x-1/2 pt-3 transition-[opacity,transform,visibility] duration-150 ease-out origin-top ${
+                    svcOpen ? 'pointer-events-auto scale-100 opacity-100' : 'pointer-events-none invisible scale-[0.97] opacity-0'
                   }`}
                 >
                   <div className="grid grid-cols-2 gap-1 rounded-md border border-line bg-surface p-2 shadow-[0_12px_32px_-12px_rgba(2,2,88,0.25)]">
@@ -137,8 +137,8 @@ export function Header() {
 
       {/* Menú móvil */}
       <div
-        className={`fixed inset-x-0 bottom-0 top-[72px] z-40 overflow-y-auto bg-surface px-4 pb-10 pt-4 transition-[opacity,transform] duration-200 ease-out lg:hidden ${
-          open ? 'translate-y-0 opacity-100' : 'pointer-events-none -translate-y-2 opacity-0'
+        className={`fixed inset-x-0 bottom-0 top-[72px] z-40 overflow-y-auto bg-surface px-4 pb-10 pt-4 transition-[opacity,transform,visibility] duration-200 ease-out lg:hidden ${
+          open ? 'translate-y-0 opacity-100' : 'pointer-events-none invisible -translate-y-2 opacity-0'
         }`}
       >
         <nav aria-label="Principal móvil" className="flex flex-col">

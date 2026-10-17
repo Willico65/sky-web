@@ -1,5 +1,5 @@
 // Documentos legales aprobados por la empresa (LE-01 a LE-07).
-// ANTES DE PUBLICAR: completar [FECHA DE PUBLICACIÓN] y pasar por revisión de abogado.
+// ANTES DE PUBLICAR: pasar por revisión de abogado.
 
 import { SITE } from './site'
 
@@ -89,13 +89,15 @@ Para corregir, actualizar o suprimir datos, o por un posible incumplimiento de l
 
 Sky Projects adopta medidas técnicas, humanas y administrativas para proteger los datos personales contra pérdida, consulta, uso o acceso no autorizado.
 
-## 11. Transmisión a terceros
+## 11. Transmisión a terceros y fuera de Colombia
 
-Para cumplir las finalidades descritas, los datos pueden compartirse con encargados que presten servicios a Sky Projects, como transportadoras, plataformas de pago, proveedores de facturación electrónica, proveedores de productos y servicios de alojamiento web. Estos encargados deberán tratar los datos solo para ese fin y con las mismas garantías de esta política.
+Para cumplir las finalidades descritas, los datos pueden compartirse con encargados que presten servicios a Sky Projects, como transportadoras, plataformas de pago, proveedores de facturación electrónica, proveedores de productos, servicios de mensajería y correo electrónico, y servicios de alojamiento web. Estos encargados deberán tratar los datos solo para ese fin y con las mismas garantías de esta política.
+
+Las solicitudes que envías desde los formularios del sitio nos llegan por WhatsApp, un servicio de Meta Platforms, o por correo electrónico a través de un proveedor de envío de correo. Estos proveedores, al igual que el servicio de alojamiento del sitio, pueden almacenar o procesar los datos en servidores ubicados fuera de Colombia, por ejemplo en Estados Unidos. Al autorizar el tratamiento de tus datos aceptas esta transmisión internacional, que se hace únicamente para las finalidades de esta política. El uso de WhatsApp se rige, además, por los términos y la política de privacidad de ese servicio.
 
 ## 12. Vigencia
 
-Esta política rige desde el [FECHA DE PUBLICACIÓN]. Las bases de datos se conservarán mientras sea necesario para cumplir las finalidades descritas y los deberes legales. Cualquier cambio sustancial se informará en www.skyprojects.com.co antes de aplicarse.`,
+Esta política rige desde el 6 de octubre de 2026. Las bases de datos se conservarán mientras sea necesario para cumplir las finalidades descritas y los deberes legales. Cualquier cambio sustancial se informará en www.skyprojects.com.co antes de aplicarse.`,
   },
   {
     slug: 'terminos',
@@ -105,7 +107,7 @@ Esta política rige desde el [FECHA DE PUBLICACIÓN]. Las bases de datos se cons
 
 **2. Cómo se compra.** Las compras y cotizaciones se hacen con un asesor por WhatsApp o por los formularios del sitio. El sitio muestra información de referencia; el pedido queda confirmado cuando el asesor te envía por escrito el producto o servicio, el precio final, el costo del envío (si aplica), el medio de pago y la garantía, y tú los aceptas.
 
-**3. Precios.** Los precios están en pesos colombianos y no incluyen IVA. El IVA se suma al momento del pago y aparece discriminado en la factura. Los precios y la disponibilidad pueden cambiar sin previo aviso hasta que el asesor confirma el pedido. Los servicios se cotizan según cada proyecto.
+**3. Precios.** Todos los precios publicados están en pesos colombianos e incluyen el IVA y los demás impuestos que apliquen: el precio que ves es el precio total del producto. El valor del IVA aparece discriminado en la factura. El costo del envío, cuando aplica, se informa por separado antes de confirmar el pedido. Los precios y la disponibilidad pueden cambiar sin previo aviso hasta que el asesor confirma el pedido. Los servicios se cotizan según cada proyecto y la cotización indica el valor total con IVA incluido.
 
 **4. Medios de pago.** Transferencia bancaria, Nequi, Daviplata o efectivo en la sede de Paipa. El pedido se despacha o se programa cuando el pago está confirmado. Sky Projects nunca te pedirá claves ni códigos de seguridad.
 
@@ -119,7 +121,7 @@ Esta política rige desde el [FECHA DE PUBLICACIÓN]. Las bases de datos se cons
 
 **9. Derechos del consumidor.** Estos términos no limitan los derechos que te da la Ley 1480 de 2011, incluidos el derecho de retracto, la reversión del pago y la garantía legal descritos en las siguientes políticas.
 
-**10. Ley aplicable.** Estos términos se rigen por las leyes de Colombia. Última actualización: [FECHA DE PUBLICACIÓN].`,
+**10. Ley aplicable.** Estos términos se rigen por las leyes de Colombia. Última actualización: 6 de octubre de 2026.`,
   },
   {
     slug: 'retracto',
@@ -174,19 +176,21 @@ Son pequeños archivos que un sitio web guarda en tu navegador para funcionar co
 
 ## ¿Qué cookies usa este sitio?
 
-www.skyprojects.com.co solo usa cookies técnicas, necesarias para que el sitio funcione: mantener la sesión de navegación, proteger los formularios contra envíos automáticos y recordar tus preferencias básicas. Estas cookies no se usan para publicidad ni para crear perfiles.
+Actualmente www.skyprojects.com.co no instala cookies propias ni de terceros. Tampoco usa herramientas de analítica o de publicidad, ni crea perfiles de quienes lo visitan. Las fuentes, las imágenes y los demás recursos se cargan desde el mismo sitio.
+
+Como en cualquier sitio web, el servicio de alojamiento registra datos técnicos de la conexión, como la dirección IP, para entregar las páginas y proteger el sitio.
 
 ## Servicios de terceros
 
-Al hacer clic en un botón de WhatsApp sales del sitio y pasas a WhatsApp, que tiene sus propias políticas de privacidad y cookies. Lo mismo ocurre con los enlaces a redes sociales o a la tienda de un proveedor.
+El sitio no tiene contenido de terceros incrustado (mapas, videos ni redes sociales). Al hacer clic en un botón de WhatsApp o en el enlace «Cómo llegar» sales del sitio y pasas a WhatsApp o a Google Maps, que tienen sus propias políticas de privacidad y cookies. Lo mismo ocurre con los enlaces a redes sociales o a la tienda de un proveedor.
 
 ## ¿Cómo puedes gestionarlas?
 
-Puedes bloquear o borrar las cookies desde la configuración de tu navegador. Si bloqueas las cookies técnicas, algunas partes del sitio, como los formularios, podrían no funcionar bien.
+Puedes bloquear o borrar las cookies desde la configuración de tu navegador. Este sitio funciona con normalidad aunque las bloquees.
 
 ## Cambios
 
-Si el sitio empieza a usar otras cookies, actualizaremos esta política y te pediremos tu consentimiento antes de activarlas. Última actualización: [FECHA DE PUBLICACIÓN].
+Si el sitio empieza a usar cookies, actualizaremos esta política. Si no son estrictamente necesarias para que el sitio funcione, te pediremos tu consentimiento antes de activarlas. Última actualización: 6 de octubre de 2026.
 
 ## Contacto
 

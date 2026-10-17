@@ -36,7 +36,7 @@ export interface Product {
   brand: string
   category: string
   subcategory: string
-  /** Precio en COP sin IVA. */
+  /** Precio en COP con IVA incluido (precio total al público, Ley 1480 de 2011, art. 26). */
   price: number | null
   inStock: boolean
   audience: ('Hogar' | 'Empresa')[]

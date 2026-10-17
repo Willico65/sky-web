@@ -2,7 +2,7 @@ import { useState, type FormEvent } from 'react'
 import { hasApi, submitForm } from '../lib/api'
 import { waLink } from '../lib/whatsapp'
 import { Button } from './Button'
-import { ConsentBoxes, Field, MSG, isEmail, isPhone } from './Form'
+import { CONSENT_LINE, ConsentBoxes, Field, MSG, focusFirstInvalid, isEmail, isPhone } from './Form'
 import { IconCheck } from './Icons'
 import { FileInput } from './FileInput'
 
@@ -46,10 +46,13 @@ export function SimpleForm({ endpoint, fields, submitLabel, whatsappIntro, succe
     if (!consent) e.consent = MSG.consent
     setErrors(e)
     setSendError('')
-    if (Object.keys(e).length) return
+    if (Object.keys(e).length) {
+      focusFirstInvalid(ev.currentTarget as HTMLFormElement)
+      return
+    }
     if (!hasApi()) {
       // Fase 1 (sin backend): WhatsApp se abre en el mismo clic para que el navegador no lo bloquee.
-      const lines = [whatsappIntro, ...fields.filter((f) => f.type !== 'file' && v[f.name]).map((f) => `${f.label}: ${v[f.name]}`)]
+      const lines = [whatsappIntro, ...fields.filter((f) => f.type !== 'file' && v[f.name]).map((f) => `${f.label}: ${v[f.name]}`), CONSENT_LINE]
       window.open(waLink(lines.join('\n')), '_blank', 'noopener')
       return setDone(true)
     }

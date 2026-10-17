@@ -14,6 +14,7 @@ export function Accordion({ items }: { items: { q: string; a: string }[] }) {
           <div key={it.q}>
             <h3>
               <button
+                id={`${id}-btn`}
                 type="button"
                 aria-expanded={isOpen}
                 aria-controls={id}
@@ -27,7 +28,8 @@ export function Accordion({ items }: { items: { q: string; a: string }[] }) {
             <div
               id={id}
               role="region"
-              className={`grid transition-[grid-template-rows,opacity] duration-200 ease-out ${isOpen ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'}`}
+              aria-labelledby={`${id}-btn`}
+              className={`grid transition-[grid-template-rows,opacity,visibility] duration-200 ease-out ${isOpen ? 'grid-rows-[1fr] opacity-100' : 'invisible grid-rows-[0fr] opacity-0'}`}
             >
               <div className="overflow-hidden">
                 <p className="max-w-[70ch] pb-5 text-[15px] leading-7 text-deep/80">{it.a}</p>
