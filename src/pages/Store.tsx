@@ -100,7 +100,8 @@ export default function Store() {
                   <li className="flex gap-3"><span className="text-[13px] font-semibold tabular-nums tracking-[0.12em] text-blue pt-0.5">02</span>Se abre WhatsApp con el producto ya escrito.</li>
                   <li className="flex gap-3"><span className="text-[13px] font-semibold tabular-nums tracking-[0.12em] text-blue pt-0.5">03</span>El asesor te confirma disponibilidad, precio final, envío y forma de pago.</li>
                 </ol>
-                <p className="mt-5 border-t border-line pt-4 text-[13.5px] leading-5 text-ink-muted"><strong className="font-semibold text-navy">Todos los precios incluyen IVA.</strong> Pagas por transferencia, Nequi, Daviplata o en efectivo en nuestra sede de Paipa.</p>
+                <p className="mt-5 border-t border-line pt-4 text-[13.5px] leading-5 text-ink-muted"><strong className="font-semibold text-navy">Productos con precio bajo cotización</strong>, como los cargadores para vehículos eléctricos: pulsa «Solicitar cotización», llena el formulario y un asesor te envía la propuesta con el equipo, la instalación y el valor.</p>
+                <p className="mt-3 text-[13.5px] leading-5 text-ink-muted"><strong className="font-semibold text-navy">Todos los precios incluyen IVA.</strong> Pagas por transferencia, Nequi, Daviplata o en efectivo en nuestra sede de Paipa.</p>
               </div>
             </Container>
           </section>

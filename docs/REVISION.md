@@ -4,13 +4,13 @@ Lo que corregiría o completaría antes de poner el sitio en línea, de mayor a 
 
 ## Bloquean la publicación
 
-1. **Compilar con las herramientas oficiales.** En el entorno donde se construyó, el registro de npm estaba bloqueado (403), así que nunca se ejecutaron `npm install`, `tsc` ni `vite build`. La vista previa se armó con esbuild, Tailwind 4 y un enrutador de reemplazo. Hay que correr `npm install && npm run build` y corregir los errores de TypeScript que aparezcan.
+1. **Compilar con las herramientas oficiales (hecho).** `npm install` y `npm run build` ya funcionan en el equipo de desarrollo, sin errores de TypeScript. Volver a compilar antes de cada publicación.
 2. **Licencia de la fuente del logo (ID-06).** `skyprojects.ttf` es «Astron Boy Video» (Ray Larabie) renombrada. Confirmar licencia y convertirla a WOFF2 (hoy se carga el TTF de 125 KB).
 3. **Datos legales.** Pasar los 6 documentos de `src/data/legal.ts` por un abogado. La fecha de publicación quedó en el 6 de octubre de 2026; actualizarla si el sitio se publica otro día.
 4. **Espacios de Nosotros (hecho).** Fundador, gerente y foto del gerente ya están en `src/pages/About.tsx`.
-5. **Catálogo vacío.** La tienda no tiene productos reales. Los 4 productos de ejemplo solo aparecen con `VITE_SHOW_SAMPLE_PRODUCTS=true`; deben quedar en `false`.
+5. **Catálogo propio.** La tienda solo tiene los 4 cargadores Jvtel (Movilidad eléctrica, bajo cotización). Faltan los demás productos de la empresa. Los 4 productos de ejemplo aparecen con `VITE_SHOW_SAMPLE_PRODUCTS=true`; en producción debe quedar en `false`.
 6. **Textos nuevos sin aprobar.** Se escribieron para huecos de diseño y necesitan visto bueno:
-   - Inicio: franja de datos («Desde 2000», «Tripp Lite», «Región centro», «< 2 h hábiles») y la tarjeta «¿No sabes qué necesitas? Cuéntanos tu caso y un asesor te orienta».
+   - Inicio: la tarjeta «¿No sabes qué necesitas? Cuéntanos tu caso y un asesor te orienta». (La franja de datos ya está aprobada: «Más de 25 años», «6 líneas de servicio», «Región centro del país», «< 2 h hábiles».)
    - Servicios: celda «¿Empezamos?».
    - Ficha de servicio: títulos «Lo que ganas con …», «Paso a paso, de la solicitud a la entrega», «Sobre …» y el cierre «¿Listo para empezar?».
    - Nosotros: «Lo que nos guía en cada proyecto» y «Detrás de cada proyecto».

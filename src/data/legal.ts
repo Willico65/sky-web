@@ -161,7 +161,7 @@ Si pagaste con un instrumento de pago electrónico, puedes pedir que se reverse 
 3. Revisamos el caso y, si aplica, reparamos el producto; si la falla se repite o no tiene arreglo, lo cambiamos por otro igual o devolvemos el dinero, como indica la ley. En servicios, repetimos el trabajo o te devolvemos el valor del servicio defectuoso.
 4. Te respondemos en un máximo de 15 días hábiles.
 
-**Productos con garantía del fabricante.** Algunos productos se atienden en el centro de servicio de la marca. En los productos Tripp Lite, Sky Projects cuenta con certificación de la marca para su revisión y mantenimiento.
+**Productos con garantía del fabricante.** Algunos productos se atienden en el centro de servicio de la marca. En los productos Tripp Lite, Sky Projects cuenta con certificación de la marca para su revisión y mantenimiento. En los cargadores Jvtel, Sky Projects es distribuidor autorizado y mantiene la misma garantía que ofrece Jvtel, en productos e instalación.
 
 **Qué no cubre.** La garantía no aplica por mal uso, instalaciones o reparaciones hechas por terceros, daños por fenómenos naturales, sobretensiones no protegidas o no seguir las instrucciones de uso.
 

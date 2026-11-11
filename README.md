@@ -1,6 +1,6 @@
 # Sitio web Sky Projects SAS
 
-Frontend del sitio de Sky Projects SAS («It Does Well»), construido con **React 18 + TypeScript + Vite + Tailwind CSS 4 + React Router 6**, siguiendo el manual de marca y las decisiones del diagnóstico del proyecto.
+Frontend del sitio de Sky Projects SAS («It Does Well»), construido con **React 18 + TypeScript + Vite + Tailwind CSS 4 + React Router 7**, siguiendo el manual de marca y las decisiones del diagnóstico del proyecto.
 
 ## Requisitos
 
