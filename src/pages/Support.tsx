@@ -3,6 +3,7 @@ import { Container } from '../components/Section'
 import { SimpleForm } from '../components/SimpleForm'
 import { usePageMeta } from '../lib/hooks'
 import { WA } from '../lib/whatsapp'
+import { SITE } from '../data/site'
 
 const STEPS = [
   { t: 'Cuéntanos el caso', d: 'Llena el formulario con tu número de factura, el producto o servicio y la falla. Si puedes, adjunta fotos o un video.' },
@@ -43,7 +44,7 @@ export default function Support() {
               <p className="mt-1 text-[15px] leading-6 text-ink-muted">¿Tienes un cargador Jvtel? Como distribuidores autorizados, atendemos su soporte, mantenimiento y garantía en Boyacá.</p>
             </div>
             <p className="mt-6 text-[14.5px] text-ink-muted">
-              Consulta nuestra <Link to="/garantias-y-devoluciones" className="text-blue underline underline-offset-2">Política de garantías, cambios y devoluciones</Link> · ¿Prefieres escribirnos? <a href={WA.support('mi producto o instalación')} target="_blank" rel="noopener noreferrer" className="text-blue underline underline-offset-2">WhatsApp (+57) 313 309 9298</a>
+              Consulta nuestra <Link to="/garantias-y-devoluciones" className="text-blue underline underline-offset-2">Política de garantías, cambios y devoluciones</Link> · ¿Prefieres escribirnos? <a href={WA.support('mi producto o instalación')} target="_blank" rel="noopener noreferrer" className="text-blue underline underline-offset-2">WhatsApp {SITE.whatsappDisplay}</a>
             </p>
           </div>
           <div className="rounded-md border border-line p-6 sm:p-8">

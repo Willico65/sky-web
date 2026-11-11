@@ -4,8 +4,12 @@ export const SITE = {
   legalName: 'Sky Projects S.A.S',
   nit: '826.002.334-0',
   slogan: 'It Does Well',
+  // Teléfono para llamadas (CO-03).
   phoneDisplay: '(+57) 313 309 9298',
-  phoneE164: '573133099298', // WhatsApp provisional; el bot tendrá otro número (pendiente).
+  phoneE164: '573133099298',
+  // WhatsApp de servicio (actualizado el 11 nov 2026). Todos los enlaces wa.me y los textos de WhatsApp usan este número.
+  whatsappDisplay: '(+57) 302 453 1999',
+  whatsappE164: '573024531999',
   email: 'contacto@skyprojects.com.co',
   address: 'Cra 21 #23-01, Centro, Paipa, Boyacá',
   mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Cra%2021%20%2323-01%20Paipa%20Boyac%C3%A1',

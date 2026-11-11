@@ -19,7 +19,7 @@ export const LEGAL_DOCS: LegalDoc[] = [
     description: 'Cómo Sky Projects S.A.S recolecta, usa y protege tus datos personales.',
     body: `## 1. Responsable del tratamiento
 
-Sky Projects S.A.S (en adelante, Sky Projects), identificada con NIT ${SITE.nit}, con domicilio en la Cra 21 #23-01, Centro, Paipa, Boyacá, Colombia. Teléfono y WhatsApp: (+57) 313 309 9298. Correo electrónico: contacto@skyprojects.com.co. Sitio web: www.skyprojects.com.co.
+Sky Projects S.A.S (en adelante, Sky Projects), identificada con NIT ${SITE.nit}, con domicilio en la Cra 21 #23-01, Centro, Paipa, Boyacá, Colombia. Teléfono: ${SITE.phoneDisplay}. WhatsApp: ${SITE.whatsappDisplay}. Correo electrónico: contacto@skyprojects.com.co. Sitio web: www.skyprojects.com.co.
 
 ## 2. Marco legal
 
@@ -69,7 +69,8 @@ Como titular, puedes:
 Las consultas y reclamos sobre datos personales los atiende el área de servicio al cliente de Sky Projects por estos canales:
 
 - Correo: contacto@skyprojects.com.co
-- Teléfono y WhatsApp: (+57) 313 309 9298
+- Teléfono: ${SITE.phoneDisplay}
+- WhatsApp: ${SITE.whatsappDisplay}
 - Dirección: Cra 21 #23-01, Centro, Paipa, Boyacá
 - Horario: lunes a viernes de 8:00 a. m. a 5:30 p. m. y sábados de 8:00 a. m. a 12:00 m.
 
@@ -103,7 +104,7 @@ Esta política rige desde el 6 de octubre de 2026. Las bases de datos se conserv
     slug: 'terminos',
     title: 'Términos y condiciones de compra',
     description: 'Condiciones para comprar productos y contratar servicios con Sky Projects.',
-    body: `**1. Quién vende.** Los productos y servicios de www.skyprojects.com.co los ofrece ${RESP}. Contacto: (+57) 313 309 9298 y contacto@skyprojects.com.co.
+    body: `**1. Quién vende.** Los productos y servicios de www.skyprojects.com.co los ofrece ${RESP}. Contacto: teléfono ${SITE.phoneDisplay}, WhatsApp ${SITE.whatsappDisplay} y contacto@skyprojects.com.co.
 
 **2. Cómo se compra.** Las compras y cotizaciones se hacen con un asesor por WhatsApp o por los formularios del sitio. El sitio muestra información de referencia; el pedido queda confirmado cuando el asesor te envía por escrito el producto o servicio, el precio final, el costo del envío (si aplica), el medio de pago y la garantía, y tú los aceptas.
 
@@ -131,7 +132,7 @@ Esta política rige desde el 6 de octubre de 2026. Las bases de datos se conserv
 
 Cuando compras a distancia (por WhatsApp, teléfono o el sitio web), puedes desistir de la compra dentro de los 5 días hábiles siguientes a la entrega del producto o a la celebración del contrato de servicio, sin dar explicaciones (Ley 1480 de 2011, artículo 47).
 
-1. Escríbenos a contacto@skyprojects.com.co o al WhatsApp (+57) 313 309 9298 con tu nombre, número de pedido o factura y el producto.
+1. Escríbenos a contacto@skyprojects.com.co o al WhatsApp ${SITE.whatsappDisplay} con tu nombre, número de pedido o factura y el producto.
 2. Devuelve el producto en el mismo estado en que lo recibiste, con sus accesorios y empaque. Los costos de transporte de la devolución los asume el cliente.
 3. Te devolvemos el dinero pagado, sin descuentos, en un plazo máximo de 30 días calendario, por el mismo medio de pago o el que acordemos contigo.
 
@@ -155,7 +156,7 @@ Si pagaste con un instrumento de pago electrónico, puedes pedir que se reverse 
 
 ## Cómo solicitarla
 
-1. Escríbenos por la página de Soporte postventa, a contacto@skyprojects.com.co o al WhatsApp (+57) 313 309 9298.
+1. Escríbenos por la página de Soporte postventa, a contacto@skyprojects.com.co o al WhatsApp ${SITE.whatsappDisplay}.
 2. Indícanos el número de factura, el producto o servicio y la falla, con fotos o video si es posible.
 3. Revisamos el caso y, si aplica, reparamos el producto; si la falla se repite o no tiene arreglo, lo cambiamos por otro igual o devolvemos el dinero, como indica la ley. En servicios, repetimos el trabajo o te devolvemos el valor del servicio defectuoso.
 4. Te respondemos en un máximo de 15 días hábiles.
@@ -204,7 +205,7 @@ Para cualquier duda: contacto@skyprojects.com.co.`,
 
 - El formulario de esta página
 - Correo: contacto@skyprojects.com.co
-- WhatsApp: (+57) 313 309 9298
+- WhatsApp: ${SITE.whatsappDisplay}
 - En la sede: Cra 21 #23-01, Centro, Paipa, de lunes a viernes de 8:00 a. m. a 5:30 p. m. y sábados de 8:00 a. m. a 12:00 m.
 
 Te responderemos en un máximo de 15 días hábiles. Si no estás conforme con la respuesta, puedes acudir a la Superintendencia de Industria y Comercio (www.sic.gov.co).`,
@@ -214,4 +215,4 @@ Te responderemos en un máximo de 15 días hábiles. Si no estás conforme con l
 export const legalBySlug = (slug: string) => LEGAL_DOCS.find((d) => d.slug === slug)
 
 export const PRIVACY_NOTICE =
-  `Sky Projects S.A.S, NIT ${SITE.nit}, con domicilio en la Cra 21 #23-01, Centro, Paipa, Boyacá, es responsable del tratamiento de los datos que nos compartes. Los usaremos para atender tu solicitud, cotizar, gestionar tus compras, facturar, programar servicios, dar soporte y garantía, y, solo si lo autorizas, enviarte ofertas y novedades. Tienes derecho a conocer, actualizar, rectificar y suprimir tus datos, y a revocar tu autorización, escribiendo a contacto@skyprojects.com.co o al (+57) 313 309 9298.`
+  `Sky Projects S.A.S, NIT ${SITE.nit}, con domicilio en la Cra 21 #23-01, Centro, Paipa, Boyacá, es responsable del tratamiento de los datos que nos compartes. Los usaremos para atender tu solicitud, cotizar, gestionar tus compras, facturar, programar servicios, dar soporte y garantía, y, solo si lo autorizas, enviarte ofertas y novedades. Tienes derecho a conocer, actualizar, rectificar y suprimir tus datos, y a revocar tu autorización, escribiendo a contacto@skyprojects.com.co o al WhatsApp ${SITE.whatsappDisplay}.`

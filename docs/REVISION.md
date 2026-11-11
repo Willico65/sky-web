@@ -26,7 +26,7 @@ Lo que corregiría o completaría antes de poner el sitio en línea, de mayor a 
 8. **Acentos de la fuente del logo.** A tamaños pequeños las tildes casi no se ven («Región» se lee «Region»). Por eso los números y textos pequeños pasaron a Exo 2; aún se usa en títulos de 28 a 56 px. Revisar que las tildes se lean en cada título.
 9. **Exo 2 alojada en el sitio (hecho).** Se carga con `@fontsource/exo-2`; el sitio ya no hace peticiones a Google Fonts. Si se agrega analítica, mapas, videos o un captcha, hay que actualizar la política de cookies y pedir consentimiento.
 10. **SEO.** Es una SPA: títulos y descripciones se cambian en el navegador. Para buen posicionamiento conviene prerenderizar las páginas (por ejemplo con `vite-plugin-ssg` o migrar a un framework con SSR). Ya hay `robots.txt` y `sitemap.xml`.
-11. **WhatsApp.** El número (+57) 313 309 9298 es provisional; el bot tendrá otro número (pendiente).
+11. **WhatsApp.** WhatsApp de servicio: (+57) 302 453 1999 (11 nov 2026). El teléfono para llamadas sigue siendo (+57) 313 309 9298.
 12. **Orden «Más recientes»** en la tienda no hace nada todavía: los productos no tienen fecha. Se activa con el backend.
 
 ## Menores

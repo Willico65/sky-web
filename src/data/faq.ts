@@ -13,7 +13,7 @@ export const FAQ_GROUPS: { group: string; items: { q: string; a: string }[] }[] 
       },
       {
         "q": "¿Cómo pido una cotización?",
-        "a": "Escríbenos por WhatsApp al (+57) 313 309 9298 o llena el formulario de cotización del sitio. Te pediremos algunos datos de tu proyecto y un asesor te responderá en menos de 2 horas hábiles."
+        "a": "Escríbenos por WhatsApp al (+57) 302 453 1999 o llena el formulario de cotización del sitio. Te pediremos algunos datos de tu proyecto y un asesor te responderá en menos de 2 horas hábiles."
       },
       {
         "q": "¿Hacen visitas técnicas?",

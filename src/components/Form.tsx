@@ -1,6 +1,7 @@
 import { useId, type ReactNode } from 'react'
 import { Link } from 'react-router-dom'
 import { PRIVACY_NOTICE } from '../data/legal'
+import { SITE } from '../data/site'
 
 // Mensajes de error aprobados (textos de Contacto).
 export const MSG = {
@@ -8,7 +9,7 @@ export const MSG = {
   email: 'Revisa tu correo; parece que le falta algo (por ejemplo, @).',
   phone: 'Escribe un número de 10 dígitos.',
   consent: 'Para enviar tu solicitud necesitamos tu autorización de tratamiento de datos.',
-  sendError: 'No pudimos enviar tu solicitud. Inténtalo de nuevo o escríbenos por WhatsApp al (+57) 313 309 9298.',
+  sendError: `No pudimos enviar tu solicitud. Inténtalo de nuevo o escríbenos por WhatsApp al ${SITE.whatsappDisplay}.`,
 }
 
 // Lleva el foco al primer campo con error (después de que React pinte los errores).

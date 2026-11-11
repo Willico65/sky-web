@@ -2,7 +2,7 @@ import { SITE } from '../data/site'
 
 /** Enlace de WhatsApp con mensaje ya escrito (guion del bot aprobado). */
 export function waLink(message: string): string {
-  return `https://wa.me/${SITE.phoneE164}?text=${encodeURIComponent(message)}`
+  return `https://wa.me/${SITE.whatsappE164}?text=${encodeURIComponent(message)}`
 }
 
 export const WA = {
