@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { Link, NavLink, useParams, useSearchParams } from 'react-router-dom'
 import { PageBanner } from '../components/PageBanner'
 import { Button } from '../components/Button'
@@ -7,7 +7,8 @@ import { ProductCard } from '../components/ProductCard'
 import { IconArrowRight, IconFilter, IconSearch } from '../components/Icons'
 import { CATEGORIES } from '../data/categories'
 import { PAGE_BANNERS } from '../data/banners'
-import { getCatalog } from '../data/products'
+import { getCatalog, specValues } from '../data/products'
+import { PartnerSeal } from '../components/PartnerSeal'
 import { usePageMeta } from '../lib/hooks'
 import { WA } from '../lib/whatsapp'
 
@@ -22,7 +23,7 @@ export default function Store() {
 
   usePageMeta(
     category ? `${category.name} | Tienda Sky Projects` : 'Tienda | Sky Projects',
-    'Portátiles, equipos de escritorio, servidores, periféricos, UPS y baterías. Compra con la asesoría de un experto por WhatsApp.',
+    'Portátiles, equipos de escritorio, servidores, periféricos, UPS, baterías y cargadores para vehículos eléctricos. Compra con la asesoría de un experto por WhatsApp.',
   )
 
   const all = getCatalog()
@@ -35,23 +36,36 @@ export default function Store() {
   const [specs, setSpecs] = useState<Record<string, string>>({})
   const [sort, setSort] = useState<Sort>('relevance')
   const [showFilters, setShowFilters] = useState(false)
+  // Al cambiar de categoría se limpian los filtros de especificación (cada categoría tiene los suyos).
+  useEffect(() => setSpecs({}), [categoria])
 
   const scoped = all.filter((p) => (!category || p.category === category.slug) && (!subcategory || p.subcategory === subcategory.slug))
   const brandOptions = [...new Set(scoped.map((p) => p.brand))].sort()
+  // Filtros de especificación: los de la subcategoría elegida o, en una categoría, los de todas sus subcategorías.
   const specOptions = useMemo(() => {
-    if (!subcategory) return []
-    return subcategory.filters.map((f) => ({ name: f, values: [...new Set(scoped.map((p) => p.specs[f]).filter((v): v is string => !!v && v !== '—'))] }))
-  }, [subcategory, scoped])
+    const names = subcategory ? subcategory.filters : category ? [...new Set(category.subcategories.flatMap((s) => s.filters))] : []
+    const order = (v: string) => { const n = Number(v.replace(',', '.')); return Number.isNaN(n) ? Infinity : n }
+    return names.map((f) => {
+      const values = [...new Set(scoped.flatMap((p) => specValues(p, f)))]
+      // Valores numéricos de menor a mayor (p. ej. potencias); el resto, en el orden en que aparecen.
+      return { name: f, values: values.every((v) => order(v) !== Infinity) ? values.sort((a, b) => order(a) - order(b)) : values }
+    })
+  }, [subcategory, category, scoped])
 
   const results = scoped
     .filter((p) => !q || `${p.name} ${p.brand} ${p.ref}`.toLowerCase().includes(q.toLowerCase()))
     .filter((p) => !brands.length || brands.includes(p.brand))
     .filter((p) => !stock || (stock === 'in' ? p.inStock : !p.inStock))
     .filter((p) => !audience || p.audience.includes(audience))
-    .filter((p) => !minP || (p.price ?? Infinity) >= Number(minP))
-    .filter((p) => !maxP || (p.price ?? -Infinity) <= Number(maxP))
-    .filter((p) => Object.entries(specs).every(([k, v]) => !v || p.specs[k] === v))
-    .sort((a, b) => (sort === 'price-asc' ? (a.price ?? 0) - (b.price ?? 0) : sort === 'price-desc' ? (b.price ?? 0) - (a.price ?? 0) : 0))
+    // Sin precio: se muestran con el rango completo y se ocultan en cuanto se fija un mínimo o un máximo.
+    .filter((p) => (!minP && !maxP) || (p.price != null && (!minP || p.price >= Number(minP)) && (!maxP || p.price <= Number(maxP))))
+    .filter((p) => Object.entries(specs).every(([k, v]) => !v || specValues(p, k).includes(v)))
+    // Orden por precio: los productos sin precio van al final en ambos sentidos.
+    .sort((a, b) => {
+      if (sort !== 'price-asc' && sort !== 'price-desc') return 0
+      if (a.price == null || b.price == null) return (a.price == null ? 1 : 0) - (b.price == null ? 1 : 0)
+      return sort === 'price-asc' ? a.price - b.price : b.price - a.price
+    })
 
   const b = PAGE_BANNERS.tienda
   const chip = (active: boolean) =>
@@ -69,7 +83,7 @@ export default function Store() {
                 <div className="mt-6 grid gap-4 sm:grid-cols-2">
                   <a href="#catalogo" className="group rounded-md border border-line p-6 transition-colors duration-200 hover:border-blue/40 hover:bg-surface-alt">
                     <p className="text-[18px] font-semibold text-navy">Catálogo Sky Projects</p>
-                    <p className="mt-2 text-[14.5px] leading-6 text-ink-muted">Equipos tecnológicos y de respaldo eléctrico seleccionados por nuestro equipo.</p>
+                    <p className="mt-2 text-[14.5px] leading-6 text-ink-muted">Equipos tecnológicos, de respaldo eléctrico y de movilidad eléctrica seleccionados por nuestro equipo.</p>
                     <span className="mt-4 inline-flex items-center gap-2 text-[14px] font-semibold text-blue">Ver catálogo <IconArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" /></span>
                   </a>
                   <Link to="/tienda/mas-productos" className="group rounded-md border border-line p-6 transition-colors duration-200 hover:border-blue/40 hover:bg-surface-alt">
@@ -100,8 +114,18 @@ export default function Store() {
               <Link to="/tienda" className="hover:text-navy">Tienda</Link> <span aria-hidden="true">/</span> <span className="text-navy">{category.name}</span>
             </nav>
           )}
+          {category?.intro && (
+            <div className="mb-10 grid items-center gap-8 overflow-hidden rounded-md border border-line bg-surface-alt lg:grid-cols-[1fr_1.1fr]">
+              <div className="p-6 sm:p-8">
+                <h1 className="text-[30px] font-semibold leading-9 text-navy">{category.name}</h1>
+                <p className="mt-3 max-w-[60ch] text-[16px] leading-7 text-deep/85">{category.intro}</p>
+                {category.partner && <PartnerSeal partner={category.partner} size="sm" className="mt-5" />}
+              </div>
+              {category.image && <img src={category.image} alt="" width={1143} height={480} loading="lazy" className="h-full w-full object-cover" />}
+            </div>
+          )}
           <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
-            <h2 className="text-[28px] font-semibold text-navy">{category ? category.name : 'Catálogo Sky Projects'}</h2>
+            <h2 className="text-[28px] font-semibold text-navy">{category ? (category.intro ? 'Productos' : category.name) : 'Catálogo Sky Projects'}</h2>
             <div className="flex gap-3">
               <label className="relative block flex-1 sm:w-72">
                 <span className="sr-only">Buscar productos</span>

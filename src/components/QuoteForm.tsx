@@ -1,6 +1,8 @@
 import { useMemo, useState, type FormEvent } from 'react'
 import { useNavigate, useSearchParams } from 'react-router-dom'
 import { SERVICES } from '../data/services'
+import { PRODUCTS } from '../data/products'
+import type { FormQuestion } from '../data/types'
 import { hasApi, submitForm } from '../lib/api'
 import { waLink } from '../lib/whatsapp'
 import { Button } from './Button'
@@ -11,6 +13,15 @@ const BUSINESS_ONLY = ['redes-y-servidores', 'procesos-digitales']
 
 type Errors = Partial<Record<string, string>>
 
+const PRODUCT_QUESTION = 'Producto de interés'
+const asQuestion = (q: FormQuestion) => (typeof q === 'string' ? { label: q } : q)
+
+// Precarga desde un producto de la tienda: /contacto?linea=<línea>&producto=<slug>
+function initialExtra(line: string, productSlug: string | null): Record<string, string> {
+  const p = PRODUCTS.find((x) => x.slug === productSlug && x.quoteLine === line)
+  return p?.quoteOption ? { [PRODUCT_QUESTION]: p.quoteOption } : {}
+}
+
 // Formulario de cotización aprobado (SE-08): campos comunes + preguntas de cada línea.
 export function QuoteForm() {
   const [params] = useSearchParams()
@@ -18,7 +29,7 @@ export function QuoteForm() {
   const initial = SERVICES.some((s) => s.slug === params.get('linea')) ? params.get('linea')! : ''
   const [line, setLine] = useState(initial)
   const [v, setV] = useState({ name: '', clientType: '', company: '', nit: '', city: '', phone: '', email: '', message: '' })
-  const [extra, setExtra] = useState<Record<string, string>>({})
+  const [extra, setExtra] = useState<Record<string, string>>(() => initialExtra(initial, params.get('producto')))
   const [files, setFiles] = useState<FileList | null>(null)
   const [consent, setConsent] = useState(false)
   const [promo, setPromo] = useState(false)
@@ -131,9 +142,18 @@ export function QuoteForm() {
       {service && (
         <fieldset className="grid gap-5 rounded-md border border-line p-4 sm:p-5">
           <legend className="px-2 text-[13px] font-semibold uppercase tracking-[0.12em] text-blue">{service.name}</legend>
-          {service.formQuestions.map((q) => (
-            <Field key={q} label={q}>
-              {(p) => <input {...p} value={extra[q] ?? ''} onChange={(e) => setExtra((x) => ({ ...x, [q]: e.target.value }))} />}
+          {service.formQuestions.map(asQuestion).map((q) => (
+            <Field key={q.label} label={q.label} hint={q.hint ?? (q.optional ? 'Opcional' : undefined)}>
+              {(p) =>
+                q.options ? (
+                  <select {...p} value={extra[q.label] ?? ''} onChange={(e) => setExtra((x) => ({ ...x, [q.label]: e.target.value }))}>
+                    <option value="">Selecciona</option>
+                    {q.options.map((o) => <option key={o}>{o}</option>)}
+                  </select>
+                ) : (
+                  <input {...p} value={extra[q.label] ?? ''} onChange={(e) => setExtra((x) => ({ ...x, [q.label]: e.target.value }))} />
+                )
+              }
             </Field>
           ))}
         </fieldset>

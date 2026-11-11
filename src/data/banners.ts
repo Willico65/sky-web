@@ -4,7 +4,7 @@ import type { BannerCopy } from './types'
 export const PAGE_BANNERS: Record<'inicio' | 'tienda' | 'nosotros' | 'cotizar', BannerCopy> = {
   "inicio": {
     "title": "Tecnología y energía que protegen tu operación",
-    "text": "Respaldo eléctrico, redes y servidores, energía solar, equipos tecnológicos y automatización de procesos para empresas y hogares.",
+    "text": "Respaldo eléctrico, redes y servidores, energía solar, equipos tecnológicos, automatización de procesos y movilidad eléctrica para empresas y hogares.",
     "buttons": [
       {
         "label": "Solicitar cotización",
@@ -18,7 +18,7 @@ export const PAGE_BANNERS: Record<'inicio' | 'tienda' | 'nosotros' | 'cotizar', 
   },
   "tienda": {
     "title": "Tienda Sky Projects",
-    "text": "Compra en línea equipos tecnológicos y de respaldo eléctrico, con la asesoría de nuestro equipo cuando la necesites.",
+    "text": "Compra en línea equipos tecnológicos, de respaldo eléctrico y cargadores para vehículos eléctricos, con la asesoría de nuestro equipo cuando la necesites.",
     "buttons": [
       {
         "label": "Ver catálogo",

@@ -1,5 +1,7 @@
 // Árbol de categorías aprobado (TI-11).
 import type { Category } from './types'
+import { JVTEL } from './partners'
+import cargadoresJvtel from '../assets/movilidad/cargadores-jvtel.webp'
 
 export const CATEGORIES: Category[] = [
   {
@@ -286,7 +288,19 @@ export const CATEGORIES: Category[] = [
         ]
       }
     ]
-  }
+  },
+  // Agregada el 11 nov 2026: catálogo Jvtel (distribuidor autorizado), todo bajo pedido y sin precio publicado.
+  {
+    name: 'Movilidad eléctrica',
+    slug: 'movilidad-electrica',
+    subcategories: [
+      { name: 'Cargadores AC', slug: 'cargadores-ac', filters: ['Potencia (kW)', 'Conector', 'Montaje'] },
+      { name: 'Cargadores DC', slug: 'cargadores-dc', filters: ['Potencia (kW)', 'Conector', 'Número de pistolas', 'Montaje'] },
+    ],
+    intro: 'Cargadores Jvtel para vehículos eléctricos, desde 7,2 kW para tu casa hasta 180 kW para una electrolinera. Todos bajo pedido, con diseño e instalación bajo RETIE en Boyacá.',
+    image: cargadoresJvtel,
+    partner: JVTEL,
+  },
 ]
 
 export const GLOBAL_FILTERS = ['Marca', 'Precio', 'Disponibilidad', 'Para'] as const

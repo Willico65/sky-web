@@ -5,7 +5,8 @@ import { Container } from '../components/Section'
 import { ProductCard } from '../components/ProductCard'
 import { IconBox, IconChat } from '../components/Icons'
 import { CATEGORIES } from '../data/categories'
-import { formatPrice, getCatalog } from '../data/products'
+import { formatPrice, getCatalog, quoteHref } from '../data/products'
+import { PartnerSeal } from '../components/PartnerSeal'
 import { usePageMeta } from '../lib/hooks'
 import { WA } from '../lib/whatsapp'
 import NotFound from './NotFound'
@@ -33,23 +34,27 @@ export default function Product() {
         </nav>
         <div className="grid gap-12 lg:grid-cols-2">
           <div className="relative grid aspect-square place-items-center rounded-md border border-line bg-surface-alt">
-            {p.image ? <img src={p.image} alt={p.name} className="h-full w-full object-contain p-10" /> : <IconBox className="h-20 w-20 text-navy/20" />}
+            {p.image ? <img src={p.image} alt={p.name} className="h-full w-full object-contain p-10 mix-blend-multiply" /> : <IconBox className="h-20 w-20 text-navy/20" />}
+            {p.badge && <span className="absolute right-4 top-4 rounded-sm bg-navy px-2 py-0.5 text-[12px] font-semibold uppercase text-on-dark">{p.badge}</span>}
             {p.sample && <span className="absolute left-4 top-4 rounded-sm bg-accent px-2 py-0.5 text-[12px] font-semibold uppercase text-navy">Ejemplo</span>}
           </div>
           <div>
             <p className="text-[13px] font-semibold uppercase tracking-[0.14em] text-ink-muted">{p.brand} · Ref. {p.ref}</p>
             <h1 className="mt-2 text-[30px] font-semibold leading-9 text-navy">{p.name}</h1>
             <p className="mt-1 text-[14.5px] text-ink-muted">{sub?.name}</p>
+            {p.partner && <PartnerSeal partner={p.partner} size="sm" className="mt-4" />}
             <div className="mt-6 flex items-end gap-3 border-y border-line py-5">
-              {price ? <p className="text-[28px] font-semibold text-navy">{price} <span className="text-[15px] font-normal text-ink-muted">IVA incluido</span></p> : <p className="text-[17px] text-ink-muted">Consulta el precio con un asesor</p>}
+              {price ? <p className="text-[28px] font-semibold text-navy">{price} <span className="text-[15px] font-normal text-ink-muted">IVA incluido</span></p> : p.quoteLine ? <p className="text-[28px] font-semibold text-navy">Precio bajo cotización</p> : <p className="text-[17px] text-ink-muted">Consulta el precio con un asesor</p>}
               <span className={`ml-auto text-[13px] font-semibold ${p.inStock ? 'text-blue' : 'text-ink-muted'}`}>{p.inStock ? 'En existencia' : 'Bajo pedido'}</span>
             </div>
             <div className="mt-6 flex flex-wrap gap-3">
-              <Button href={WA.buy(p.name, p.ref)} variant="buy"><IconChat className="h-5 w-5" />Comprar con un asesor</Button>
+              {p.quoteLine
+                ? <Button to={quoteHref(p)} variant="buy">Solicitar cotización</Button>
+                : <Button href={WA.buy(p.name, p.ref)} variant="buy"><IconChat className="h-5 w-5" />Comprar con un asesor</Button>}
             </div>
             <ul className="mt-6 space-y-2 text-[14.5px] leading-6 text-deep/80">
-              <li><strong className="text-navy">Envío:</strong> Envíos a otras ciudades, cotizados según tu destino. También puedes recoger en Paipa si hay existencias.</li>
-              <li><strong className="text-navy">Garantía:</strong> Te informamos por escrito la garantía de este producto al comprarlo.</li>
+              <li><strong className="text-navy">Envío:</strong> {p.shipping ?? 'Envíos a otras ciudades, cotizados según tu destino. También puedes recoger en Paipa si hay existencias.'}</li>
+              <li><strong className="text-navy">Garantía:</strong> {p.quoteLine && p.warranty ? p.warranty : 'Te informamos por escrito la garantía de este producto al comprarlo.'}</li>
             </ul>
 
             <div className="mt-10">

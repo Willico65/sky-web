@@ -35,6 +35,14 @@ import procesos_digitales_d_jpg from '../assets/banners/sky-banner-procesos-digi
 import procesos_digitales_m_avif from '../assets/banners/sky-banner-procesos-digitales-celular-fondo.avif'
 import procesos_digitales_m_webp from '../assets/banners/sky-banner-procesos-digitales-celular-fondo.webp'
 import procesos_digitales_m_jpg from '../assets/banners/sky-banner-procesos-digitales-celular-fondo.jpg'
+// Movilidad eléctrica (B10): «Electric Car Charging at Station», de ammar abbas (Pexels, licencia gratuita).
+// https://www.pexels.com/photo/electric-car-charging-at-station-eco-friendly-transportation-35736773/
+import movilidad_electrica_d_avif from '../assets/banners/sky-banner-movilidad-electrica-escritorio-fondo.avif'
+import movilidad_electrica_d_webp from '../assets/banners/sky-banner-movilidad-electrica-escritorio-fondo.webp'
+import movilidad_electrica_d_jpg from '../assets/banners/sky-banner-movilidad-electrica-escritorio-fondo.jpg'
+import movilidad_electrica_m_avif from '../assets/banners/sky-banner-movilidad-electrica-celular-fondo.avif'
+import movilidad_electrica_m_webp from '../assets/banners/sky-banner-movilidad-electrica-celular-fondo.webp'
+import movilidad_electrica_m_jpg from '../assets/banners/sky-banner-movilidad-electrica-celular-fondo.jpg'
 import tienda_d_avif from '../assets/banners/sky-banner-tienda-escritorio-fondo.avif'
 import tienda_d_webp from '../assets/banners/sky-banner-tienda-escritorio-fondo.webp'
 import tienda_d_jpg from '../assets/banners/sky-banner-tienda-escritorio-fondo.jpg'
@@ -54,7 +62,7 @@ import cotizar_m_avif from '../assets/banners/sky-banner-cotizar-celular-fondo.a
 import cotizar_m_webp from '../assets/banners/sky-banner-cotizar-celular-fondo.webp'
 import cotizar_m_jpg from '../assets/banners/sky-banner-cotizar-celular-fondo.jpg'
 
-export type BannerKey = 'inicio' | 'respaldo-electrico' | 'redes-y-servidores' | 'energia-solar' | 'equipos-tecnologicos' | 'procesos-digitales' | 'tienda' | 'nosotros' | 'cotizar'
+export type BannerKey = 'inicio' | 'respaldo-electrico' | 'redes-y-servidores' | 'energia-solar' | 'equipos-tecnologicos' | 'procesos-digitales' | 'movilidad-electrica' | 'tienda' | 'nosotros' | 'cotizar'
 
 export const BANNER_IMAGES: Record<BannerKey, { desktop: { avif: string; webp: string; jpg: string }; mobile: { avif: string; webp: string; jpg: string } }> = {
   'inicio': { desktop: { avif: inicio_d_avif, webp: inicio_d_webp, jpg: inicio_d_jpg }, mobile: { avif: inicio_m_avif, webp: inicio_m_webp, jpg: inicio_m_jpg } },
@@ -63,6 +71,7 @@ export const BANNER_IMAGES: Record<BannerKey, { desktop: { avif: string; webp: s
   'energia-solar': { desktop: { avif: energia_solar_d_avif, webp: energia_solar_d_webp, jpg: energia_solar_d_jpg }, mobile: { avif: energia_solar_m_avif, webp: energia_solar_m_webp, jpg: energia_solar_m_jpg } },
   'equipos-tecnologicos': { desktop: { avif: equipos_tecnologicos_d_avif, webp: equipos_tecnologicos_d_webp, jpg: equipos_tecnologicos_d_jpg }, mobile: { avif: equipos_tecnologicos_m_avif, webp: equipos_tecnologicos_m_webp, jpg: equipos_tecnologicos_m_jpg } },
   'procesos-digitales': { desktop: { avif: procesos_digitales_d_avif, webp: procesos_digitales_d_webp, jpg: procesos_digitales_d_jpg }, mobile: { avif: procesos_digitales_m_avif, webp: procesos_digitales_m_webp, jpg: procesos_digitales_m_jpg } },
+  'movilidad-electrica': { desktop: { avif: movilidad_electrica_d_avif, webp: movilidad_electrica_d_webp, jpg: movilidad_electrica_d_jpg }, mobile: { avif: movilidad_electrica_m_avif, webp: movilidad_electrica_m_webp, jpg: movilidad_electrica_m_jpg } },
   'tienda': { desktop: { avif: tienda_d_avif, webp: tienda_d_webp, jpg: tienda_d_jpg }, mobile: { avif: tienda_m_avif, webp: tienda_m_webp, jpg: tienda_m_jpg } },
   'nosotros': { desktop: { avif: nosotros_d_avif, webp: nosotros_d_webp, jpg: nosotros_d_jpg }, mobile: { avif: nosotros_m_avif, webp: nosotros_m_webp, jpg: nosotros_m_jpg } },
   'cotizar': { desktop: { avif: cotizar_d_avif, webp: cotizar_d_webp, jpg: cotizar_d_jpg }, mobile: { avif: cotizar_m_avif, webp: cotizar_m_webp, jpg: cotizar_m_jpg } },

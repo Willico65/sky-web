@@ -38,7 +38,7 @@ public/         Favicon, íconos de app, imagen para compartir, fuente del logo
 
 ## Rutas
 
-`/` · `/nosotros` · `/servicios` · `/servicios/:slug` (5 líneas) · `/tienda` · `/tienda/:categoria` · `/tienda/producto/:slug` · `/tienda/mas-productos` · `/blog` · `/contacto` · `/contacto/gracias` · `/preguntas-frecuentes` · `/soporte` · `/privacidad` · `/terminos` · `/cookies` · `/garantias-y-devoluciones` · `/retracto` · `/pqrs`
+`/` · `/nosotros` · `/servicios` · `/servicios/:slug` (6 líneas) · `/tienda` · `/tienda/:categoria` · `/tienda/producto/:slug` · `/tienda/mas-productos` · `/blog` · `/contacto` · `/contacto/gracias` · `/preguntas-frecuentes` · `/soporte` · `/privacidad` · `/terminos` · `/cookies` · `/garantias-y-devoluciones` · `/retracto` · `/pqrs`
 
 Es una SPA: el servidor debe devolver `index.html` para cualquier ruta (en Netlify `_redirects`, en Vercel `rewrites`, en Nginx `try_files $uri /index.html`).
 

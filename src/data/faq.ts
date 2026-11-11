@@ -5,11 +5,11 @@ export const FAQ_GROUPS: { group: string; items: { q: string; a: string }[] }[] 
     "items": [
       {
         "q": "¿Qué servicios ofrece Sky Projects?",
-        "a": "Trabajamos en cinco líneas: Respaldo eléctrico (UPS, baterías, tableros y plantas eléctricas), Redes y servidores, Energía solar, Equipos tecnológicos y Procesos digitales (automatización de procesos y reportes, integración de sistemas e implementación de software para empresas)."
+        "a": "Trabajamos en seis líneas: Respaldo eléctrico (UPS, baterías, tableros y plantas eléctricas), Redes y servidores, Energía solar, Equipos tecnológicos, Procesos digitales (automatización de procesos y reportes, integración de sistemas e implementación de software para empresas) y Movilidad eléctrica (suministro e instalación de cargadores para vehículos eléctricos)."
       },
       {
         "q": "¿Atienden hogares o solo empresas?",
-        "a": "Respaldo eléctrico, Energía solar y Equipos tecnológicos están disponibles para hogares y empresas. Redes y servidores y Procesos digitales son para empresas."
+        "a": "Respaldo eléctrico, Energía solar, Equipos tecnológicos y Movilidad eléctrica están disponibles para hogares y empresas. Redes y servidores y Procesos digitales son para empresas."
       },
       {
         "q": "¿Cómo pido una cotización?",
@@ -25,7 +25,7 @@ export const FAQ_GROUPS: { group: string; items: { q: string; a: string }[] }[] 
       },
       {
         "q": "¿En qué zonas trabajan?",
-        "a": "Atendemos la región centro del país desde nuestra sede en Paipa, Boyacá, y estamos ampliando nuestra cobertura a todo el territorio nacional."
+        "a": "Atendemos la región centro del país desde nuestra sede en Paipa, Boyacá, y estamos ampliando nuestra cobertura a todo el territorio nacional. La línea de Movilidad eléctrica atiende Boyacá."
       },
       {
         "q": "¿Cuál es su horario de atención?",

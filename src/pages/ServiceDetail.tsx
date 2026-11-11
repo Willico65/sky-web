@@ -6,7 +6,10 @@ import { Reveal } from '../components/Reveal'
 import { Accordion } from '../components/Accordion'
 import { FieldPhotos } from '../components/FieldPhotos'
 import { ServiceIcon } from '../components/ServiceIcon'
-import { IconCheck, IconChat } from '../components/Icons'
+import { IconArrowRight, IconCheck, IconChat } from '../components/Icons'
+import { ProductCard } from '../components/ProductCard'
+import { PartnerSeal } from '../components/PartnerSeal'
+import { getCatalog } from '../data/products'
 import { serviceBySlug } from '../data/services'
 import type { BannerKey } from '../lib/bannerImages'
 import { usePageMeta } from '../lib/hooks'
@@ -21,11 +24,12 @@ const WHO_STYLE: Record<string, string> = {
 export default function ServiceDetail() {
   const { slug } = useParams()
   const s = serviceBySlug(slug)
-  usePageMeta(s ? `${s.name} | Sky Projects` : 'Servicio no encontrado | Sky Projects', s?.intro)
+  usePageMeta(s ? (s.seo?.title ?? `${s.name} | Sky Projects`) : 'Servicio no encontrado | Sky Projects', s?.seo?.description ?? s?.intro)
   if (!s) return <Navigate to="/servicios" replace />
 
   const isStore = s.slug === 'equipos-tecnologicos'
   const quoteTo = `/contacto?linea=${s.slug}`
+  const lineProducts = s.products ? getCatalog().filter((p) => p.category === s.products!.category) : []
 
   return (
     <>
@@ -73,7 +77,7 @@ export default function ServiceDetail() {
       <section className="border-y border-line bg-surface-alt py-20">
         <Container>
           <SectionHeading eyebrow="Beneficios" title={`Lo que ganas con ${s.name.toLowerCase()}`} />
-          <div className="mt-10 grid gap-5 md:grid-cols-3">
+          <div className={`mt-10 grid gap-5 ${s.benefits.length === 4 ? 'sm:grid-cols-2 lg:grid-cols-4' : 'md:grid-cols-3'}`}>
             {s.benefits.map((b, i) => (
               <Reveal key={b.title} delay={i * 60} className="rounded-md border border-line bg-surface p-7">
                 <span className="text-[13px] font-semibold tabular-nums tracking-[0.12em] text-blue">0{i + 1}</span>
@@ -84,6 +88,22 @@ export default function ServiceDetail() {
           </div>
         </Container>
       </section>
+
+      {s.audiences && (
+        <section className="pt-20">
+          <Container>
+            <SectionHeading eyebrow="Para quién" title="Una solución para cada espacio" />
+            <div className="mt-10 grid gap-px overflow-hidden rounded-md border border-line bg-line sm:grid-cols-2 lg:grid-cols-4">
+              {s.audiences.map((a, i) => (
+                <Reveal key={a.who} delay={i * 60} className="bg-surface p-6">
+                  <h3 className="text-[17px] font-semibold text-navy">{a.who}</h3>
+                  <p className="mt-1.5 text-[15px] leading-6 text-ink-muted">{a.text}</p>
+                </Reveal>
+              ))}
+            </div>
+          </Container>
+        </section>
+      )}
 
       <section className="py-20">
         <Container className="grid gap-12 lg:grid-cols-[1fr_1.5fr]">
@@ -110,9 +130,35 @@ export default function ServiceDetail() {
 
       <FieldPhotos slug={s.slug} />
 
+      {s.about && (
+        <section className="border-t border-line bg-surface-alt py-20">
+          <Container className="grid gap-10 lg:grid-cols-[1fr_1.5fr]">
+            <SectionHeading eyebrow="Nuestro respaldo" title={`Sobre ${s.name.toLowerCase()}`} />
+            <Reveal>
+              <p className="max-w-[62ch] text-[17px] leading-7 text-deep/85">{s.about.text}</p>
+              {s.about.partner && <PartnerSeal partner={s.about.partner} className="mt-6" />}
+            </Reveal>
+          </Container>
+        </section>
+      )}
+
+      {s.products && lineProducts.length > 0 && (
+        <section className="border-t border-line py-20">
+          <Container>
+            <div className="flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-end">
+              <SectionHeading eyebrow="Equipos disponibles" title={s.products.title} intro={s.products.text} />
+              <Button to={`/tienda/${s.products.category}`} variant="outline">Ver en la tienda <IconArrowRight className="h-4 w-4" /></Button>
+            </div>
+            <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+              {lineProducts.map((p) => <ProductCard key={p.ref} product={p} />)}
+            </div>
+          </Container>
+        </section>
+      )}
+
       <section className="border-t border-line py-20">
         <Container className="grid gap-12 lg:grid-cols-[1fr_1.5fr]">
-          <SectionHeading eyebrow="Preguntas frecuentes" title={`Sobre ${s.name.toLowerCase()}`} />
+          <SectionHeading eyebrow="Preguntas frecuentes" title={s.about ? 'Lo que más nos preguntan' : `Sobre ${s.name.toLowerCase()}`} />
           <Accordion items={s.faq} />
         </Container>
       </section>

@@ -7,6 +7,8 @@ import { SITE } from '../data/site'
 import { usePageMeta } from '../lib/hooks'
 import { FinalCta } from './Home'
 import fotoGerente from '../assets/equipo/gerente.jpg'
+import { PartnerSeal } from '../components/PartnerSeal'
+import { JVTEL } from '../data/partners'
 
 const MANAGER = 'Wilson Augusto Camargo'
 const FOUNDER = MANAGER
@@ -88,7 +90,7 @@ export default function About() {
       <section className="border-y border-line bg-surface-alt py-20">
         <Container className="grid gap-12 lg:grid-cols-3">
           <div className="lg:col-span-1">
-            <SectionHeading eyebrow="Nuestro equipo" title="Detrás de cada proyecto" intro="Detrás de cada proyecto hay un equipo técnico con experiencia en energía, redes, servidores y sistemas solares." />
+            <SectionHeading eyebrow="Nuestro equipo" title="Detrás de cada proyecto" intro="Detrás de cada proyecto hay un equipo técnico con experiencia en energía, redes, servidores, sistemas solares y movilidad eléctrica." />
           </div>
           <Reveal className="flex items-center gap-6 rounded-md border border-line bg-surface p-6 lg:col-span-1">
             <img
@@ -108,6 +110,9 @@ export default function About() {
             <p className="text-[13px] font-semibold uppercase tracking-[0.14em] text-blue">Certificaciones</p>
             <h3 className="mt-2 text-[18px] font-semibold text-navy">Tripp Lite</h3>
             <p className="mt-2 text-[15px] leading-6 text-ink-muted">Contamos con certificación de Tripp Lite para la revisión y el mantenimiento de los dispositivos de la marca.</p>
+            <h3 className="mt-6 border-t border-line pt-5 text-[18px] font-semibold text-navy">Distribuidor autorizado Jvtel</h3>
+            <p className="mt-2 text-[15px] leading-6 text-ink-muted">Somos distribuidores autorizados de Jvtel para el suministro y la instalación de cargadores para vehículos eléctricos.</p>
+            <PartnerSeal partner={JVTEL} className="mt-4" />
           </Reveal>
         </Container>
       </section>

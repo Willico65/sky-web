@@ -17,7 +17,7 @@ import { WA } from '../lib/whatsapp'
 
 const FACTS = [
   { k: 'Más de 25 años de trayectoria', v: 'Llevando soluciones tecnológicas a empresas y hogares' },
-  { k: '5 líneas de servicio', v: 'Respaldo eléctrico, redes y servidores, energía solar, equipos tecnológicos y procesos digitales' },
+  { k: '6 líneas de servicio', v: 'Respaldo eléctrico, redes y servidores, energía solar, equipos tecnológicos, procesos digitales y movilidad eléctrica' },
   { k: 'Región centro del país', v: 'Sede principal en Paipa y proyectos para clientes de toda la región centro del país, con proyección a todo el territorio nacional' },
   { k: '< 2 h hábiles', v: 'Tiempo de respuesta por WhatsApp' },
 ]
@@ -32,7 +32,7 @@ const WHY = [
 export default function Home() {
   usePageMeta(
     'Sky Projects | Respaldo eléctrico, redes y energía solar',
-    'Respaldo eléctrico, redes y servidores, energía solar, equipos tecnológicos y automatización de procesos para empresas y hogares. Cotiza por WhatsApp.',
+    'Respaldo eléctrico, redes y servidores, energía solar, equipos tecnológicos, automatización de procesos y cargadores para vehículos eléctricos. Cotiza por WhatsApp.',
   )
   const b = PAGE_BANNERS.inicio
   const featured = getCatalog().slice(0, 4)
@@ -70,7 +70,7 @@ export default function Home() {
           <SectionHeading
             eyebrow="Nuestros servicios"
             title="Soluciones integrales para tu empresa u hogar"
-            intro="Cinco líneas de trabajo con un mismo equipo: desde el respaldo de energía hasta la automatización de tus procesos."
+            intro="Seis líneas de trabajo con un mismo equipo: desde el respaldo de energía hasta la carga de tu vehículo eléctrico."
           />
           <div className="mt-12 grid gap-px overflow-hidden rounded-md border border-line bg-line sm:grid-cols-2 lg:grid-cols-3">
             {SERVICES.map((s, i) => (
@@ -86,13 +86,14 @@ export default function Home() {
                 </Link>
               </Reveal>
             ))}
-            <Reveal delay={250} className="bg-navy">
-              <div className="tech-grid flex h-full flex-col justify-between p-7 text-on-dark">
+            {/* Con 6 líneas, la tarjeta de ayuda ocupa una fila completa para que ninguna fila quede con una sola tarjeta. */}
+            <Reveal delay={250} className="bg-navy sm:col-span-2 lg:col-span-3">
+              <div className="tech-grid flex h-full flex-col justify-between gap-6 p-7 text-on-dark sm:flex-row sm:items-center">
                 <div>
                   <p className="text-[19px] font-semibold">¿No sabes qué necesitas?</p>
                   <p className="mt-2 text-[15px] leading-6 text-on-dark/75">Cuéntanos tu caso y un asesor te orienta.</p>
                 </div>
-                <div className="mt-6">
+                <div className="shrink-0">
                   <Button href={WA.general()} variant="light"><IconChat className="h-5 w-5" />Escribir por WhatsApp</Button>
                 </div>
               </div>
@@ -108,7 +109,7 @@ export default function Home() {
             <SectionHeading
               eyebrow="Tienda"
               title="Equipos listos para tu empresa u hogar"
-              intro="Encuentra portátiles, equipos de escritorio, periféricos, UPS y baterías. Un asesor te acompaña por WhatsApp hasta la entrega."
+              intro="Encuentra portátiles, equipos de escritorio, periféricos, UPS, baterías y cargadores para vehículos eléctricos. Un asesor te acompaña por WhatsApp hasta la entrega."
             />
             <Reveal><Button to="/tienda" variant="buy">Ir a la tienda</Button></Reveal>
           </div>

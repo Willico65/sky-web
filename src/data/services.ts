@@ -1,5 +1,6 @@
 // Generado a partir de las fichas aprobadas (SE-01, SE-02, SE-07, SE-08, VI-04).
 import type { Service } from './types'
+import { JVTEL } from './partners'
 
 export const SERVICES: Service[] = [
   {
@@ -503,7 +504,81 @@ export const SERVICES: Service[] = [
         "a": "Con una reunión de diagnóstico para entender el proceso, los usuarios y los sistemas involucrados. Después te enviamos una propuesta con alcance, cronograma y valor."
       }
     ]
-  }
+  },
+  // Sexta línea, aprobada el 11 nov 2026. Sky Projects es distribuidor autorizado de JVTEL RYC S.A.S.
+  {
+    slug: 'movilidad-electrica',
+    name: 'Movilidad eléctrica',
+    audience: 'Hogares y empresas',
+    short: 'Cargadores para vehículos eléctricos en casas, conjuntos, empresas y estaciones de servicio, con diseño e instalación bajo RETIE.',
+    title: 'Carga tu vehículo eléctrico con una instalación segura',
+    intro: 'Suministramos e instalamos cargadores AC y DC para tu casa, tu conjunto, tu empresa o tu estación de servicio, con diseño eléctrico bajo RETIE.',
+    seo: {
+      title: 'Movilidad eléctrica | Cargadores para vehículos eléctricos | Sky Projects',
+      description: 'Suministro e instalación de cargadores AC y DC para vehículos eléctricos en Boyacá. Distribuidores autorizados de Jvtel. Solicita tu cotización.',
+    },
+    includes: [
+      'Visita técnica para revisar el sitio y la capacidad de tu red eléctrica',
+      'Diseño eléctrico: diagrama unifilar y memoria de cálculo bajo RETIE',
+      'Suministro del cargador, protecciones, cableado y canalización',
+      'Instalación, pruebas, puesta en marcha y capacitación',
+      'Estudio de carga para conjuntos y edificios, y trámite de conexión con el operador de red cuando el proyecto lo requiere',
+      'Mantenimiento, soporte y garantía',
+    ],
+    benefits: [
+      { title: 'Carga segura en tu propio espacio', text: 'Un circuito exclusivo con sus protecciones, calculado para tu red eléctrica.' },
+      { title: 'El equipo que se ajusta a tu caso', text: 'Desde 7,2 kW para tu garaje hasta 180 kW para una electrolinera.' },
+      { title: 'Instalación conforme a la norma', text: 'Diseño eléctrico y memoria de cálculo bajo RETIE, firmados por Jvtel.' },
+      { title: 'Control desde el celular', text: 'Carga programada, gestión remota y cobro al público según el equipo.' },
+    ],
+    audiences: [
+      { who: 'Hogar', text: 'Cargar de noche en tu garaje.' },
+      { who: 'Conjuntos residenciales y edificios', text: 'Varios residentes cargando sin sobrecargar la acometida.' },
+      { who: 'Empresas y flotas', text: 'Carga rápida y control de quién carga y cuánto.' },
+      { who: 'Electrolineras y estaciones de servicio', text: 'Muchos vehículos al día y cobro de la carga al público.' },
+    ],
+    process: [
+      { step: 'Solicitud', detail: 'Por el formulario web o WhatsApp.', who: 'Bot' },
+      { step: 'Levantamiento de información', detail: 'Dónde se instalará, qué vehículos se cargarán y cuántas cargas al día esperas.', who: 'Bot' },
+      { step: 'Visita técnica', detail: 'Revisamos el sitio, la red eléctrica y la capacidad disponible.', who: 'Equipo técnico' },
+      { step: 'Diseño y propuesta', detail: 'Jvtel elabora el diseño bajo RETIE y te enviamos el equipo recomendado, el alcance y el valor.', who: 'Asesor' },
+      { step: 'Aprobación y programación', detail: 'Confirmas la propuesta y acordamos la fecha.', who: 'Asesor' },
+      { step: 'Suministro e instalación', detail: 'Montaje del cargador, las protecciones y el cableado, a cargo de Jvtel o de Sky Projects.', who: 'Equipo técnico' },
+      { step: 'Pruebas y entrega', detail: 'Puesta en marcha y capacitación en el uso del equipo y la app.', who: 'Equipo técnico' },
+      { step: 'Mantenimiento y soporte', detail: 'Mantenimiento preventivo y correctivo, y atención de garantías.', who: 'Asesor' },
+    ],
+    formQuestions: [
+      { label: '¿Qué necesitas?', options: ['Instalación nueva', 'Mantenimiento o soporte de una instalación existente', 'Asesoría'] },
+      { label: '¿Dónde se instalará?', options: ['Casa', 'Conjunto residencial o edificio', 'Empresa o flota', 'Estación de servicio o electrolinera'] },
+      { label: 'Producto de interés', options: ['JV-P7K-POR', 'Cargador DC 1 pistola', 'Cargador DC doble pistola', 'Cargador DC alta potencia', 'No estoy seguro'], optional: true },
+      { label: '¿Qué vehículos se cargarán?', optional: true, hint: 'Marca y modelo, o el tipo de conector si lo conoces.' },
+      { label: '¿Cuántas cargas al día esperas?', optional: true },
+    ],
+    cta: 'Cotizar cargador',
+    banner: {
+      key: 'movilidad-electrica',
+      title: 'Carga tu vehículo eléctrico con una instalación segura',
+      text: 'Suministramos e instalamos cargadores AC y DC para tu casa, tu conjunto, tu empresa o tu estación de servicio, con diseño eléctrico bajo RETIE.',
+      buttons: [{ label: 'Cotizar cargador', kind: 'sec' }],
+    },
+    about: {
+      text: 'Somos distribuidores autorizados de Jvtel, empresa con experiencia en redes eléctricas desde el año 2000. Atendemos en Boyacá instalaciones nuevas y las ya realizadas. El diseño eléctrico lo firma Jvtel y la instalación la hacen Jvtel o Sky Projects. Tu cargador tiene la misma garantía que ofrece Jvtel.',
+      partner: JVTEL,
+    },
+    products: {
+      title: 'Cargadores Jvtel',
+      text: 'Conoce los equipos que suministramos e instalamos. Todos se venden bajo pedido y con cotización.',
+      category: 'movilidad-electrica',
+    },
+    faq: [
+      { q: '¿Qué cargador necesito para mi casa?', a: 'Para cargar en tu garaje, el JV-P7K-POR de 7,2 kW. Puedes dejarlo fijo o llevarlo contigo, y lo controlas desde el celular. En la visita técnica confirmamos que tu red eléctrica lo soporta.' },
+      { q: '¿Qué necesito para cotizar?', a: 'Dónde se instalará (casa, conjunto, empresa o estación), qué vehículos se cargarán, cuántas cargas al día esperas y el municipio.' },
+      { q: '¿Instalan en conjuntos residenciales?', a: 'Sí. Hacemos el estudio de carga para que varios residentes carguen sin sobrecargar la acometida del edificio.' },
+      { q: '¿La instalación cumple el RETIE?', a: 'Sí. El diseño eléctrico y la memoria de cálculo los elabora y firma Jvtel conforme al RETIE.' },
+      { q: '¿Qué garantía tienen los cargadores?', a: 'La misma de Jvtel: el JV-P7K-POR tiene 5 años de garantía. En los equipos DC, la garantía y el plan de mantenimiento se definen en la propuesta de cada proyecto.' },
+      { q: '¿Dónde instalan?', a: 'En Boyacá, tanto instalaciones nuevas como las ya realizadas.' },
+    ],
+  },
 ]
 
 export const serviceBySlug = (slug?: string) => SERVICES.find((s) => s.slug === slug)

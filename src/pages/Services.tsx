@@ -18,7 +18,7 @@ const STEPS = [
 ]
 
 export default function Services() {
-  usePageMeta('Servicios | Sky Projects', 'Respaldo eléctrico, redes y servidores, energía solar, equipos tecnológicos y procesos digitales. Conoce cómo trabajamos y solicita tu cotización.')
+  usePageMeta('Servicios | Sky Projects', 'Respaldo eléctrico, redes y servidores, energía solar, equipos tecnológicos, procesos digitales y movilidad eléctrica. Conoce cómo trabajamos y solicita tu cotización.')
   return (
     <>
       <section className="relative overflow-hidden bg-navy text-on-dark">

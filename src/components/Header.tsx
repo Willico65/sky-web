@@ -105,7 +105,7 @@ export function Header() {
                     ))}
                     <Link
                       to="/servicios"
-                      className="flex items-center rounded-sm p-3 text-[14px] font-semibold text-blue transition-colors duration-150 hover:bg-surface-alt"
+                      className="col-span-2 flex items-center rounded-sm p-3 text-[14px] font-semibold text-blue transition-colors duration-150 hover:bg-surface-alt"
                     >
                       Ver todos los servicios →
                     </Link>
